@@ -1,26 +1,24 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import React from "react";
-import IntroComponent from "./components/IntroComponent";
-import AboutMe from "./components/AboutMe";
-import SkillSet from "./components/SkillSet";
-import Projects from "./components/Projects";
-import Experience from "./components/Experience";
+import React from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import IntroComponent from './components/IntroComponent';
+import AboutMe from './components/AboutMe';
+import SkillSet from './components/SkillSet';
+import Projects from './components/Projects';
+import Experience from './components/Experience';
 
 export default function App() {
   return (
-    <div className="">
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Header />
-      <div className="backgroundDiv">
-        <div className="container">
-          <IntroComponent />
-          <AboutMe />
-          <SkillSet />
-          <Projects />
-          <Experience />
-          <Footer />
-        </div>
-      </div>
+      <main className="container" style={{ flex: 1 }}>
+        <IntroComponent />
+        <AboutMe />
+        <SkillSet />
+        <Projects />
+        <Experience />
+        <Footer />
+      </main>
     </div>
   );
 }

@@ -4,168 +4,205 @@ function Experience() {
   const experiences = [
     {
       period: '2026 – Present',
-      role: 'iOS Developer & Technical Engineer',
+      role: 'iOS Developer & Technical Trainer',
       organization: 'SIMATS Engineering Institution · Chennai',
-      type: 'Engineering & Training',
-      accentColor: '#006AFF',
+      type: 'Engineering & Mentorship',
+      accentColor: '#0A84FF',
       bullets: [
-        'Serve as iOS Developer & Technical Trainer / Engineer, blending hands-on iOS engineering with mentorship.',
+        'Serve as iOS Developer & Technical Trainer, blending hands-on native iOS engineering with developer mentorship.',
         'Architect and deploy production native iOS applications using Swift, SwiftUI, UIKit, and Core ML.',
-        'Mentor developers in iOS architecture, debugging, App Store submission, and interview readiness.'
+        'Mentor developers in iOS architecture, debugging, App Store submission standards, and interview readiness.',
+        'Execute structured testing across four disciplines: Selenium (Web), Appium (Android & iOS), Backend Vulnerability, and Load Testing.',
+        'Partner cross-functionally with development and QA teams to benchmark latency, resolve defects, and ensure zero-crash releases.'
       ]
     },
     {
-      period: 'Industry Role',
+      period: 'Oct 2025 – Present',
       role: 'iOS Developer',
-      organization: 'Viana Soft',
-      type: 'Mobile Engineering',
-      accentColor: '#27C841',
+      organization: 'Viana Soft Private Limited (SIMATS)',
+      type: 'Fast-Track Promotion in 2 Months',
+      accentColor: '#30D158',
       bullets: [
-        'Engineered institutional telemetry and monitoring application Viana 360 for iPhone & iPad.',
-        'Integrated real-time streaming REST APIs with Combine reactive data publishers and Swift Charts.',
-        'Optimized responsive split-views for iPadOS and led full TestFlight beta testing and App Store release.'
+        'Promoted from iOS Intern to Full-Time iOS Developer within 2 months in recognition of high delivery velocity.',
+        'Spearheaded development of “Viana 360,” a cross-device institutional application built for iPhone and iPad on App Store.',
+        'Engineered scalable responsive SwiftUI layouts with Combine reactive streams and real-time REST API telemetry.',
+        'Led end-to-end testing of VBuy Food application across iOS devices, confirming functionality, UI consistency, and performance.',
+        'Delivered the application within an aggressive ~3-month timeline and successfully launched it live on the Apple App Store.'
       ]
     },
     {
-      period: 'Industry Role',
-      role: 'Technical QA & Automation Engineer',
+      period: 'Jan 2025 – Jul 2025',
+      role: 'iOS Development Intern',
       organization: 'Greatify',
-      type: 'QA & Verification',
-      accentColor: '#FEBD2C',
+      type: 'AI-Enhanced Enterprise Platforms',
+      accentColor: '#FF9F0A',
       bullets: [
-        'Architected multi-platform automated regression test suites using Selenium (Web) and Appium (iOS & Android).',
-        'Conducted backend vulnerability testing, endpoint load benchmarking, and performance stress simulations.',
-        'Implemented Postman API collections and streamlined CI/CD verification pipelines.'
+        'Engineered mobile modules for AI-enhanced ERP, LMS, and digital examination enterprise solutions.',
+        'Integrated RESTful APIs and optimized client-side state handling to ensure fluid user navigation.',
+        'Collaborated with QA teams on test case design, regression validation, and defect tracking.'
       ]
     },
     {
-      period: 'Education',
+      period: 'Nov 2021 – May 2025',
       role: 'B.Tech in Artificial Intelligence & Data Science',
-      organization: 'Saveetha Engineering College / SIMATS',
-      type: 'Degree & Research',
-      accentColor: '#f5576c',
+      organization: 'Dhanalakshmi Srinivasan Engineering College',
+      type: 'Degree · CGPA 7.5',
+      accentColor: '#BF5AF2',
       bullets: [
         'Specialized in Artificial Intelligence, Machine Learning, Deep Neural Networks, and Mobile Systems.',
-        'Researched and built clinical computer vision diagnostics on Apple Neural Engine (ANE).'
+        'Published research paper on iOS Development in International Journal of Research Publication and Reviews (IJRPR).',
+        'Completed 6-month AWS Cloud Computing Architecture certification.'
       ]
     }
   ];
 
   return (
-    <div id="experience" style={{ marginTop: '90px' }}>
-      <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <h1 style={{ fontSize: '2.4rem', margin: 0 }}>
-          Experience &amp; Journey <strong style={{ color: '#27C841' }}>.</strong>
-        </h1>
-        <p
-          className="cartoonText"
-          style={{ fontSize: '1.4rem', color: '#27C841', marginTop: '6px' }}
-        >
-          ~ From Enterprise iOS Apps to Automated QA Systems ~
+    <section id="experience" style={{ paddingTop: '80px', paddingBottom: '60px' }}>
+      {/* Section Header */}
+      <div className="section-header">
+        <span className="section-tag">CAREER MILESTONES</span>
+        <h2 className="section-title">
+          Experience &amp; <span className="gradient-text-blue">Journey</span>.
+        </h2>
+        <p className="section-subtitle">
+          From fast-track promotion to shipping institutional App Store platforms and mentoring mobile engineers.
         </p>
       </div>
 
+      {/* Timeline Container */}
       <div
         style={{
-          maxWidth: '850px',
+          maxWidth: '860px',
           margin: '0 auto',
-          padding: '0 20px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '24px'
+          position: 'relative'
         }}
       >
-        {experiences.map((exp, idx) => (
-          <div
-            key={idx}
-            style={{
-              backgroundColor: '#fff',
-              borderRadius: 14,
-              border: '1px solid #e2e8f0',
-              padding: '24px 28px',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
-              borderLeft: `5px solid ${exp.accentColor}`,
-              transition: 'transform 0.3s ease',
-              display: 'flex',
-              flexDirection: 'column'
-            }}
-          >
+        {/* Vertical timeline spine */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 15,
+            bottom: 15,
+            left: 20,
+            width: 2,
+            background: 'linear-gradient(to bottom, #0A84FF 0%, #30D158 35%, #FF9F0A 70%, #BF5AF2 100%)',
+            opacity: 0.35
+          }}
+        />
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+          {experiences.map((exp, idx) => (
             <div
+              key={idx}
               style={{
                 display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                flexWrap: 'wrap',
-                gap: '8px',
-                marginBottom: 8
+                gap: '24px',
+                position: 'relative'
               }}
             >
-              <span
+              {/* Timeline indicator node */}
+              <div
                 style={{
-                  fontSize: '0.85rem',
-                  fontWeight: 'bold',
-                  color: exp.accentColor,
-                  fontFamily: 'monospace'
+                  width: 42,
+                  height: 42,
+                  borderRadius: '50%',
+                  backgroundColor: '#090d16',
+                  border: `2px solid ${exp.accentColor}`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  zIndex: 2,
+                  boxShadow: `0 0 16px ${exp.accentColor}40`
                 }}
               >
-                {exp.period}
-              </span>
-              <span
+                <div
+                  style={{
+                    width: 14,
+                    height: 14,
+                    borderRadius: '50%',
+                    backgroundColor: exp.accentColor
+                  }}
+                />
+              </div>
+
+              {/* Experience Card */}
+              <div
+                className="glass-card"
                 style={{
-                  fontSize: '0.75rem',
-                  backgroundColor: '#f1f5f9',
-                  color: '#475569',
-                  padding: '3px 10px',
-                  borderRadius: 12,
-                  fontWeight: 600
+                  flex: 1,
+                  padding: '28px',
+                  borderLeft: `4px solid ${exp.accentColor}`
                 }}
               >
-                {exp.type}
-              </span>
+                {/* Header row */}
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'flex-start',
+                    flexWrap: 'wrap',
+                    gap: '10px',
+                    marginBottom: '10px'
+                  }}
+                >
+                  <div>
+                    <h3 style={{ fontSize: '1.35rem', margin: '0 0 4px 0', color: '#ffffff' }}>
+                      {exp.role}
+                    </h3>
+                    <h4 style={{ fontSize: '0.98rem', margin: 0, color: 'var(--text-secondary)', fontWeight: 500 }}>
+                      {exp.organization}
+                    </h4>
+                  </div>
+
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span
+                      style={{
+                        fontSize: '0.74rem',
+                        fontWeight: 600,
+                        padding: '4px 10px',
+                        borderRadius: 20,
+                        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                        color: exp.accentColor,
+                        border: `1px solid ${exp.accentColor}40`
+                      }}
+                    >
+                      {exp.type}
+                    </span>
+                    <span
+                      style={{
+                        fontSize: '0.8rem',
+                        color: 'var(--text-muted)',
+                        fontFamily: 'monospace'
+                      }}
+                    >
+                      {exp.period}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Bullets */}
+                <ul
+                  style={{
+                    margin: '16px 0 0 0',
+                    paddingLeft: '20px',
+                    color: 'var(--text-secondary)',
+                    fontSize: '0.94rem',
+                    lineHeight: '1.65'
+                  }}
+                >
+                  {exp.bullets.map((bullet, bIdx) => (
+                    <li key={bIdx} style={{ marginBottom: '8px' }}>
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-
-            <h3
-              style={{
-                margin: '0 0 4px 0',
-                fontSize: '1.35rem',
-                color: '#0f172a',
-                fontFamily: 'EBGaramondBold, sans-serif'
-              }}
-            >
-              {exp.role}
-            </h3>
-            <h4
-              style={{
-                margin: '0 0 14px 0',
-                fontSize: '1rem',
-                color: '#64748b',
-                fontFamily: 'EBGaramondRegular, sans-serif',
-                fontWeight: 500
-              }}
-            >
-              {exp.organization}
-            </h4>
-
-            <ul
-              style={{
-                margin: 0,
-                paddingLeft: '20px',
-                color: '#334155',
-                fontSize: '0.96rem',
-                lineHeight: '1.6',
-                fontFamily: 'EBGaramondRegular, sans-serif'
-              }}
-            >
-              {exp.bullets.map((b, bIdx) => (
-                <li key={bIdx} style={{ marginBottom: '6px' }}>
-                  {b}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

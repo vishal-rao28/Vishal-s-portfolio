@@ -1,704 +1,711 @@
+/* ==========================================================================
+   Vishal Rao M — Apple-Inspired Cupertino Dark / Glassmorphism Design System
+   ========================================================================== */
+
 :root {
-  --textcolor:#000;
-  --blue: #006AFF;
-  --backgroundColor:#fff;
+  --bg-primary: #090d16;
+  --bg-secondary: #0f172a;
+  --bg-card: rgba(255, 255, 255, 0.035);
+  --bg-card-hover: rgba(255, 255, 255, 0.06);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(255, 255, 255, 0.16);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --apple-blue: #0a84ff;
+  --apple-blue-glow: rgba(10, 132, 255, 0.25);
+  --apple-cyan: #64d2ff;
+  --apple-green: #30d158;
+  --apple-green-glow: rgba(48, 209, 88, 0.25);
+  --apple-amber: #ff9f0a;
+  --apple-purple: #bf5af2;
+  --apple-indigo: #5e5ce6;
+  --apple-pink: #ff375f;
+  
+  --gradient-blue: linear-gradient(135deg, #0a84ff 0%, #0066cc 100%);
+  --gradient-purple: linear-gradient(135deg, #bf5af2 0%, #5e5ce6 100%);
+  --gradient-emerald: linear-gradient(135deg, #30d158 0%, #10b981 100%);
+  --gradient-amber: linear-gradient(135deg, #ff9f0a 0%, #f59e0b 100%);
+  --gradient-card: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.015) 100%);
 }
 
-
-@font-face 
-{
-  font-family: "EBGaramondBold";
-  src: local('EBGaramondBold'), url(./GTWalsheimPro-Bold/GTWalsheimPro-Bold.ttf);
-  font-style: normal;
+@font-face {
+  font-family: "GTWalsheimPro-Bold";
+  src: url("./GTWalsheimPro-Bold/GTWalsheimPro-Bold.ttf") format("truetype");
+  font-weight: 700;
   font-display: swap;
 }
 
-@font-face 
-{
-  font-family: "EBGaramondRegular";
-  src: local('EBGaramondBold'), url(./GTWalsheimPro-Bold/GTWalsheimPro-Regular.ttf);
-  font-style: normal;
+@font-face {
+  font-family: "GTWalsheimPro-Regular";
+  src: url("./GTWalsheimPro-Bold/GTWalsheimPro-Regular.ttf") format("truetype");
+  font-weight: 400;
   font-display: swap;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
-
-
-html,
-body {
-  padding: 0;
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: EBGaramondRegular;
-  /* cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
-    auto; */
-    background-color: var(--backgroundColor) !important;
-  overflow-x: hidden;
+  padding: 0;
 }
 
-h1,h2,h3,h4,h5,h6{
-  font-family: "EBGaramondBold";
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "GTWalsheimPro-Regular", "Inter", sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(circle at 15% 10%, rgba(10, 132, 255, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 25%, rgba(191, 90, 242, 0.07) 0%, transparent 40%),
+    radial-gradient(circle at 50% 60%, rgba(48, 209, 88, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 85%, rgba(10, 132, 255, 0.06) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "GTWalsheimPro-Bold", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-* {
-  box-sizing: border-box;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.para{
-  text-align:center;
-  color:var(--textcolor);
-  opacity:0.5;
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
 }
 
-.headernav{
-  margin-right:10px;
-  padding:10px;
-  color:grey;
-  font-weight: bolder;
-  font-family: "EBGaramondRegular";
-  cursor: pointer;
-}
-.headernav:hover
-{
-  background-color:#f2f2f2;
-  color:#000 !important;
-  border-radius:10px;
-  border:0px solid #fff;
-  transition:0.25s;
-  
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  border: 2px solid var(--bg-primary);
 }
 
-.draggable-main {
-  z-index:1;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  user-select: none;
-  font-family: "EBGaramondBold" !important;
-  
-  display: flex;
-  justify-content: center;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Selection */
+::selection {
+  background: var(--apple-blue);
+  color: #ffffff;
+}
+
+/* Base Layout Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Glass Card */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.3s ease, 
+              box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-highlight);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Badges & Tags */
+.status-pill {
+  display: inline-flex;
   align-items: center;
-  background: #f0f0f0;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: rgba(48, 209, 88, 0.12);
+  color: #30d158;
+  border: 1px solid rgba(48, 209, 88, 0.28);
 }
 
-.content {
-  cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
-  auto;
-  position: relative;
-  font-family: "EBGaramondBold" !important;
-  width: 420px;
-  height: 240px;
-  font-size:18px;
+.status-beacon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #30d158;
+  box-shadow: 0 0 10px #30d158;
+  animation: pulseBeacon 2s infinite;
 }
 
-.content > div {
-  position: absolute;
-  width: 450px;
-  height: 90px;
-  overflow: visible;
-  font-family: "EBGaramondBold" !important;
-  pointer-events: auto;
-  transform-origin: 50% 50% 0px;
-  border-radius: 8px;
-  color: white;
-  line-height: 90px;
-  padding-left: 32px;
-  background: lightblue;
-  /* text-transform: uppercase; */
-}
-
-.content > div:nth-child(1) {
-  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-}
-.content > div:nth-child(3) {
-  background: linear-gradient(135deg, #3beb7b 0%, #3fa1fc 100%);
-}
-.content > div:nth-child(4) {
-  background: linear-gradient(135deg, #5ee7df 0%, #7e38e0 100%);
-}
-.content > div:nth-child(5) {
-  background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
-}
-.content > div:nth-child(2) {
-  background: linear-gradient(135deg, #f5576c 0%, #eebd89 100%);
-}
-
-.container{
-  width: 70%;
-  margin-top: 10%;
-  max-width:1300px;
-  display: block;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-.backgroundDiv{
-  height:100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* background-image: url('./assets/img/background.png'); */
-}
-.IntroComponent{
-  margin-top: 10%;
-  
-  display: flex;
-  
-
-}
-.headingIntro{
-  font-size: 150%;
-  animation: fadein 2s,heading 2s;
-}
-
-.headingIntro span::before {
-  content: "iOS Developer";
-  animation: animate infinite 8s;
-  padding-left: 10px;
-}
-
-@keyframes animate {
-  0%, 20% {
-    content: "iOS Developer";
-  }
-  25%, 45% {
-    content: "SwiftUI & UIKit Engineer";
-  }
-  50%, 70% {
-    content: "QA & Testing Specialist";
-  }
-  75%, 95% {
-    content: "Core ML Developer";
-  }
-  100% {
-    content: "Technical Engineer";
-  }
-}
-
-
-.subHeadingIntroComponent {
-  animation: subHeading 2s;
-  color:#000;
-  opacity:0.5;
-  cursor: pointer;
-}
-
-.subHeadingIntroComponent:hover {
-  color:#000;
-  transform: scale(1.2);
-  opacity:0.8;
-  cursor: pointer;
-  transition:1.3s;
-}
-
-.cartoonText{
-  font-family: 'Nanum Pen Script', cursive;
-  color:var(--blue);
-  /* transform: rotate(-15deg); */
-}
-.iphoneImg{
-  position: relative;
-  top: 50px;
-  left: 80%;
-  z-index: 1;
-  /* transform: rotate(1deg); */
-  transition: transform 1.2s ease-in-out;
-
-}
-
-.iphoneImg:hover{
- transform:rotate(2deg) scale(1.015);
-
-}
-.imageIntro{
-  position:relative;
-  top: 0;
-  left: 0;
-  animation: fadein 2s , subHeading 2s;
-  cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
-    auto;
-}
-
-.instaLoop{
-  cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
-  auto;
-  transition: transform 1.2s ease-in-out;
-  transform: rotate(3deg);
-}
-.instaLoop:hover{
-  transform:rotate(2deg) scale(1.025);
- 
- }
-.macLw{
-position:absolute !important;
-top:0px;
-left:20%;
-border-radius:5px;
-transition: transform 1.2s ease-in-out;
-margin-top:30px;
-box-shadow: 2px 2px 10px rgb(92, 92, 92);
-
-}
-
-.macLw:hover{
-  transform: rotate(-1deg) scale(1.015);
- }
-svg{
-    overflow: visible;
-    height: 1.76em;
-}
-
-
-/* media query for specialtext */
-
-@keyframes fadein {
-  from { opacity: 0.7; }
-  to   { opacity: 1; }
-}
-
-@keyframes heading {
+@keyframes pulseBeacon {
   0% {
-      position: relative;
-      left:-10px;
-      transform: scaleY(0.9) scaleX(0.9);
-      -webkit-transform: scaleY(0.9) scaleX(0.9);
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.7);
+  }
+  70% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 8px rgba(48, 209, 88, 0);
   }
   100% {
-      top:0px;
-      position: relative;
-      left: 0%;
-      transform: scaleY(1.0) scaleX(1.0);
-      -webkit-transform: scaleY(1.0) scaleX(1.0);
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(48, 209, 88, 0);
   }
 }
 
-@keyframes subHeading {
-  0% {
-      transform: scaleY(0.9) scaleX(0.9);
-      -webkit-transform: scaleY(0.9) scaleX(0.9);
-  }
-  100% {
-
-      transform: scaleY(1.0) scaleX(1.0);
-      -webkit-transform: scaleY(1.0) scaleX(1.0);
-  }
+/* Modern Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 26px;
+  background: var(--gradient-blue);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 20px var(--apple-blue-glow);
+  transition: all 0.25s ease;
+  font-family: inherit;
 }
 
-.aboutMe{
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(10, 132, 255, 0.4);
+  filter: brightness(1.08);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--border-highlight);
+  transform: translateY(-2px);
+}
+
+/* Gradient Text */
+.gradient-text-blue {
+  background: linear-gradient(135deg, #64d2ff 0%, #0a84ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-purple {
+  background: linear-gradient(135deg, #e0a5ff 0%, #bf5af2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-emerald {
+  background: linear-gradient(135deg, #70f398 0%, #30d158 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Tech Tag Pill */
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.tech-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Section Header Utility */
+.section-header {
   text-align: center;
-  width:100%;
-  padding:20px;
+  margin-bottom: 48px;
 }
 
-.skillSet{
+.section-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--apple-blue);
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  .container {
+    width: 94%;
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* ==========================================================================
+   Advanced Animative Design System & Keyframe Effects
+   ========================================================================== */
+
+/* iPhone 16 Pro Hardware Chassis & Outer Titanium Rim */
+.iphone-chassis {
+  position: relative;
+  width: 330px;
+  height: 660px;
+  background: #090a0f;
+  border-radius: 54px;
+  padding: 10px;
+  box-shadow: 
+    0 0 0 2px #272930,
+    0 0 0 5px #12141a,
+    0 25px 70px -15px rgba(0, 0, 0, 0.95),
+    0 0 50px rgba(10, 132, 255, 0.22);
+  box-sizing: border-box;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  user-select: none;
+}
+
+.iphone-chassis:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 
+    0 0 0 2px #3b82f6,
+    0 0 0 5px #1e293b,
+    0 35px 85px -15px rgba(0, 0, 0, 0.95),
+    0 0 65px rgba(10, 132, 255, 0.38);
+}
+
+/* Super Retina XDR OLED Screen */
+.iphone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #020617;
+  border-radius: 44px;
+  overflow: hidden;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Screen Anti-Reflective Glare */
+.iphone-glare {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.015) 25%, transparent 60%);
+  pointer-events: none;
+  z-index: 25;
+}
+
+/* Dynamic Island */
+.dynamic-island {
+  position: absolute;
+  top: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  z-index: 30;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: width 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), height 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dynamic-island-camera {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #1e293b 0%, #030712 100%);
+  border: 1px solid #111827;
+  box-shadow: inset 0 0 2px rgba(56, 189, 248, 0.4);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.dynamic-island-sensor {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 6px currentColor;
+  animation: sensorBlink 2.5s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes sensorBlink {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.35; }
+}
+
+/* iOS Status Bar */
+.ios-status-bar {
+  position: absolute;
+  top: 13px;
+  left: 24px;
+  right: 24px;
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+  pointer-events: none;
+  z-index: 28;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
 }
 
-.skillSetWritten{
-  width:70%;
-  border:1px solid lightgrey;
-  border-radius:5px;
-  padding:20px;
-
+.ios-status-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
 }
 
-.notes
-{
-  border:1.5px solid lightgrey;
-  border-radius:7px;
-  margin:20px;
-  box-shadow: 2px 2px 5px lightgrey;
-  margin-right:auto ;
-  display:block;
-  transition: transform 1.2s ease-in-out;
-
+/* iOS Home Indicator Bar */
+.home-indicator {
+  width: 124px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 4px;
+  margin: 8px auto 10px auto;
+  flex-shrink: 0;
+  z-index: 25;
+  transition: background-color 0.2s ease;
 }
 
-.notes:hover{
-  transform: rotate(-1deg) scale(1.005);
+.iphone-chassis:hover .home-indicator {
+  background: rgba(255, 255, 255, 0.85);
 }
 
-.textBubble{
-  width:300px;
-  margin-right: auto;
+/* Levitation Float Animation */
+@keyframes floatingLevitate {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.35deg);
+  }
+}
+
+.floating-device {
+  animation: floatingLevitate 5s ease-in-out infinite;
+}
+
+/* Mobile Responsive Scale for iPhone Chassis */
+@media (max-width: 480px) {
+  .iphone-chassis {
+    width: 295px !important;
+    height: 590px !important;
+    border-radius: 46px !important;
+    padding: 8px !important;
+  }
+  .iphone-screen {
+    border-radius: 38px !important;
+  }
+}
+
+/* iPhone Physical Hardware Buttons on Chassis */
+.iphone-btn-action {
   position: absolute;
-  left: 10%;
-  animation: hideAnimation 0s ease-in 2.5s;
-  animation-fill-mode: forwards;
+  left: -6px;
+  top: 105px;
+  width: 4px;
+  height: 26px;
+  background: #383a40;
+  border-radius: 3px 0 0 3px;
+  box-shadow: -1px 0 3px rgba(0,0,0,0.5);
+  transition: transform 0.1s ease;
 }
 
-@keyframes hideAnimation {
-  to {
-    visibility: hidden;
-    width: 0;
-    height: 0;
-  }
-}
-
-.hiddenText{
-  visibility:hidden;
-  animation: showAnimation 0s ease-in 2.5s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes showAnimation {
-  to {
-    visibility: visible;
-  }
-}
-
-.btn{
-  padding:10px;
-  background-color: var(--blue);
-  color:#fff;
-  border-radius:40px;
-  border:1px solid var(--blue);
-  box-shadow: 0 3px 5px var(--blue);
-  width:160px;
-  height:45px;
-  font-size: 101%;
-  font-family: "EBGaramondRegular";
-  margin:20px;
-  margin-left:0px;
-  transition: transform 0.5s ease-in-out;
-  cursor:pointer;
-}
-
-.btn:hover{
-  transform: scale(1.035);
-  background-color: #fff;
-  color:#333;
-  border:1px solid #fff;
-  box-shadow: 0 3px 10px lightblue;
-  transition:0.5s;
-}
-
-.btn2{
-  padding:10px;
-  background-color: #fff;
-  color:#333;
-  border-radius:40px;
-  border:1px solid #fff;
-  box-shadow: 0 3px 10px lightblue;
-  width:160px;
-  font-family: "EBGaramondRegular";
-  font-size: 101%;
-  margin:20px;
-  margin-left:0px;
-  height:45px;
-  cursor:pointer;
-}
-
-.btn2:hover
-{
-  transform: scale(1.035);
-  background-color: var(--blue);
-  color:#fff;
-  border-radius:40px;
-  border:1px solid var(--blue);
-  box-shadow: 0 3px 5px var(--blue);
-  transition:0.5s;
-
-}
-
-.dp{
-  border-radius: 100%;
-  object-fit: cover;
-  width:100px;
-  height:100px;
-}
-.dp2{
-  border-radius: 10px;
-  object-fit: cover;
-  width:200px;
-  height:200px;
-}
-
-.idCard{
-  transition:0.5s;
-  box-shadow: 2px 2px 5px lightgrey;
-}
-
-.idCard:hover{
-  transform: rotate(-1deg) scale(1.015);
-}
-
-/* #root {
-  position: fixed;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
-    auto;
-}
-
-#root > div {
+.iphone-btn-vol-up {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
-  will-change: transform;
+  left: -6px;
+  top: 145px;
+  width: 4px;
+  height: 48px;
+  background: #383a40;
+  border-radius: 3px 0 0 3px;
+  box-shadow: -1px 0 3px rgba(0,0,0,0.5);
+  transition: transform 0.1s ease;
 }
 
-#root > div > div {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-  will-change: transform;
-  box-shadow: 0 62.5px 125px -25px rgba(50, 50, 73, 0.5), 0 37.5px 75px -37.5px rgba(0, 0, 0, 0.6);
-} */
-
-
-@media only screen and (max-width: 1320px) {
-  .container{
-    
-    width:90% !important;
-    display: block;
-    margin-left: auto;
-    margin-right: auto
-  }
-
-  .IntroComponent{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    width: 100%;
-    padding:0px !important;
-  }
-
-  .textBubble{
-    position: relative;
-    left:0%;
-    margin:0;
-    padding:0;
-    margin-left: auto;
-    margin-right:auto;
-    display: block;
-  }
-  .IntroComponentWrapper{
-    width:100% !important;
-    padding:20px;
-  }
-
-  .idCard{
-    /* min-width:350px; */
-    max-width: 400px;
-    margin-right: auto!important;
-  }
-
+.iphone-btn-vol-down {
+  position: absolute;
+  left: -6px;
+  top: 205px;
+  width: 4px;
+  height: 48px;
+  background: #383a40;
+  border-radius: 3px 0 0 3px;
+  box-shadow: -1px 0 3px rgba(0,0,0,0.5);
+  transition: transform 0.1s ease;
 }
 
-@media only screen and (max-width: 600px) {
-
-  .container{
-    margin-top:70px!important;
-  }
-  .IntroComponent{
-    margin-bottom:0px;
-  }
-
-  .idText{
-    padding:0px !important;
-    padding-left:20px !important;
-  }
-
-  .cartoonTextIntro{
-    left:0% !important;
-    position: relative;
-    margin-top:100px !important;
-    text-align: center !important ;
-    display: block;
-  }
-  .idCard{
-    /* min-width:350px; */
-    max-width: 400px;
-    margin-right: auto!important;
-    margin-left: auto!important;
-    font-size: 70% !important;
-  }
-
-  .idCard2{
-    width:100% !important;
-    font-size:90% !important;
-  }
-
-  #about{
-    flex-direction: column !important;
-    width:100%;
-    justify-content: center;
-  }
-
-  .instaLoop{
-    min-width: 300px;
-    display: block;
-    margin-left: auto;
-    margin-right:auto;
-  }
-
-  .para{
-    width:90% !important;
-    margin-left: auto;
-    margin-right: auto;
-    display:block;
-  }
-
-  /* .cartoonText{
-    display:none;
-  } */
-
-  .dp2{
-    width:35% !important;
-    height:35% !important;
-  }
-
-  .instaTag{
-    font-size:60% !important;
-  }
-  .skillSet{
-    padding:20px;
-    flex-direction: column-reverse;
-  }
-
-  .draggableItems{
-    width:100% !important;
-    margin-left: auto;
-    margin-right:auto;
-    display: block;
-    max-width: 400px;
-  }
-  .notesDiv{
-    width:100% !important;
-    margin-top: 0px !important;
-  }
-
-  .content > div{
-    width: 100% !important;
-    font-size: 80% !important;
-  }
-
-  #socials{
-    flex-direction: column;
-    padding-left: 0px !important;
-  }
-
-  #socials h1{
-    margin-bottom:0px;
-  }
-
-  .cartoonText2{
-    margin:0px;
-  }
-
-  .lastText{
-    margin-right: auto;
-  }
-
-  .socialLinks{
-    margin-top:20px;
-    justify-content:center !important;
-    align-items:center !important;
-    margin-left: auto;
-    margin-right:auto !important;
-  }
-
-  .imageIntro{
-    width:90% !important;
-    
-  }
-
-  .macLw{
-    left:0px !important;
-  }
-
-  .iphoneImg{
-    left:60% !important;
-    top:80px;
-  }
-  .notes{
-    margin:0px !important;
-  }
-  .SkillSetItems{
-    width:100% !important;
-  }
-
-  .projectCard{
-
-    width: 90vw !important;
-    margin-bottom:20px;
-    margin-top:20px;
-    height:auto;
-    border:2px solid #fff;
-    border-radius: 10px;
-    transition: transform 0.5s ease-in-out;
-    cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
-    auto;
-
-  }
-
-}
-.iframeDiv {
-  height: 650px !important;
-  background-color: white;
-  border-radius: 0px !important;
-  /* cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
-  auto; */
+.iphone-btn-power {
+  position: absolute;
+  right: -6px;
+  top: 155px;
+  width: 4px;
+  height: 68px;
+  background: #383a40;
+  border-radius: 0 3px 3px 0;
+  box-shadow: 1px 0 3px rgba(0,0,0,0.5);
+  transition: transform 0.1s ease;
 }
 
-.iframeFrame {
-  cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
-  auto;
-    border: none;
-  outline: none;
-  width:100%;
-  height: 100%;
-  /* border-radius: 10px; */
-  overflow-x: none !important;
+.iphone-chassis:hover .iphone-btn-action,
+.iphone-chassis:hover .iphone-btn-vol-up,
+.iphone-chassis:hover .iphone-btn-vol-down {
+  background: #0A84FF;
+  box-shadow: -2px 0 8px rgba(10, 132, 255, 0.6);
 }
 
-.projectsDiv{
-    max-width:100%;
-    padding:30px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: space-evenly;
-    align-items: center;
-    /* cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
-    auto; */
+.iphone-chassis:hover .iphone-btn-power {
+  background: #BF5AF2;
+  box-shadow: 2px 0 8px rgba(191, 90, 242, 0.6);
 }
 
-.projectCard{
-  /* max-width: 450px; */
-  width: 30vw;
-  margin-bottom:20px;
-  margin-top:20px;
-  height:auto;
-  /* max-height:350px !important; */
-  border:2px solid #fff;
-  border-radius: 10px;
-  transition: transform 0.5s ease-in-out;
-  cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
-  auto;
+/* Scanner Laser Beam Animation */
+@keyframes laserScan {
+  0% {
+    top: 5%;
+    opacity: 0.2;
+  }
+  50% {
+    top: 85%;
+    opacity: 0.9;
+  }
+  100% {
+    top: 5%;
+    opacity: 0.2;
+  }
 }
 
-.projectCard:hover{
-  transform: scale(1.035);
-  background-color: #fff;
-  color:#333;
-  border:1px solid #fff;
-  box-shadow: 0 3px 10px orange;
-  transition:0.5s;
+.laser-beam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2dd4bf, #fff, #2dd4bf, transparent);
+  box-shadow: 0 0 12px #2dd4bf, 0 0 24px #2dd4bf;
+  animation: laserScan 2.6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 10;
+}
 
+/* Rotating Targeting Reticle */
+@keyframes reticleSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.reticle-rotate {
+  animation: reticleSpin 12s linear infinite;
+}
+
+/* ECG Waveform Pulse & Flow */
+@keyframes ecgTravel {
+  0% {
+    stroke-dashoffset: 600;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.ecg-path {
+  stroke-dasharray: 600;
+  animation: ecgTravel 3s linear infinite;
+}
+
+/* Inhale/Exhale Breathing Cycle */
+@keyframes gentleBreathe {
+  0%, 100% {
+    transform: scale(0.96);
+    filter: drop-shadow(0 0 4px rgba(67, 56, 202, 0.4));
+  }
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 16px rgba(99, 102, 241, 0.8));
+  }
+}
+
+.breathing-element {
+  animation: gentleBreathe 4s ease-in-out infinite;
+}
+
+/* Bus Traveling GPS Animation */
+@keyframes busRoute {
+  0% {
+    left: 20%;
+    top: 45%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  30% {
+    left: 55%;
+    top: 45%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  40% {
+    left: 55%;
+    top: 30%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  70% {
+    left: 75%;
+    top: 30%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  85% {
+    left: 75%;
+    top: 65%;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  100% {
+    left: 20%;
+    top: 45%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+.animated-bus {
+  position: absolute;
+  animation: busRoute 14s ease-in-out infinite;
+  z-index: 5;
+}
+
+/* Radar Sonar Ping */
+@keyframes radarPulse {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.radar-sonar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid #f59e0b;
+  animation: radarPulse 2s ease-out infinite;
+  pointer-events: none;
+}
+
+/* Dynamic Island Expansion Keyframe */
+@keyframes islandMorph {
+  0% {
+    transform: translateX(-50%) scale(0.95);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.06);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.island-pop {
+  animation: islandMorph 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Shimmer Highlight for Live Code / Badges */
+@keyframes badgeGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(10, 132, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(10, 132, 255, 0.6);
+  }
+}
+
+.glowing-badge {
+  animation: badgeGlow 3s ease-in-out infinite;
 }

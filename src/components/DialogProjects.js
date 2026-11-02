@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Dialog from '@mui/material/Dialog';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 function DialogProjects({
   title,
@@ -8,12 +7,14 @@ function DialogProjects({
   status,
   icon,
   gradient,
+  accentColor,
   description,
   architecture,
   qa,
   stack,
   src,
-  github
+  github,
+  onTestOnIPhone
 }) {
   const [open, setOpen] = React.useState(false);
   const [size, setSize] = React.useState('md');
@@ -27,6 +28,16 @@ function DialogProjects({
     setOpen(false);
   };
 
+  const handleTestOnIPhone = () => {
+    if (onTestOnIPhone) {
+      onTestOnIPhone();
+    }
+    const el = document.getElementById('iphone-studio');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const changeSize = () => {
     setSize((prev) => (prev === 'md' ? 'lg' : 'md'));
   };
@@ -34,32 +45,35 @@ function DialogProjects({
   const isLive = status && status.toLowerCase().includes('live');
 
   return (
-    <div>
+    <>
       {/* Project Card */}
       <div
-        className="projectCard"
-        onClick={handleClickOpen}
+        className="glass-card"
         style={{
-          background: '#ffffff',
-          borderRadius: 14,
-          overflow: 'hidden',
-          boxShadow: '0 8px 30px rgba(0,0,0,0.08)',
-          border: '1px solid #e2e8f0',
-          cursor: 'pointer',
           display: 'flex',
           flexDirection: 'column',
-          transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-          margin: '16px 12px',
-          minWidth: '320px',
-          maxWidth: '380px'
+          overflow: 'hidden',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+          backgroundColor: 'rgba(255, 255, 255, 0.03)',
+          transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'translateY(-4px)';
+          e.currentTarget.style.borderColor = accentColor ? `${accentColor}80` : 'rgba(255, 255, 255, 0.2)';
+          e.currentTarget.style.boxShadow = `0 16px 40px rgba(0, 0, 0, 0.4), 0 0 25px ${accentColor || '#0A84FF'}25`;
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'translateY(0)';
+          e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+          e.currentTarget.style.boxShadow = 'none';
         }}
       >
         {/* Banner Area */}
         <div
           style={{
-            background: gradient || 'linear-gradient(135deg, #1e293b, #0f172a)',
-            padding: '24px 20px',
-            color: '#fff',
+            background: gradient || 'linear-gradient(135deg, #0f172a, #1e293b)',
+            padding: '24px 22px',
+            color: '#ffffff',
             position: 'relative'
           }}
         >
@@ -68,13 +82,13 @@ function DialogProjects({
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              marginBottom: 12
+              marginBottom: 14
             }}
           >
             <span
               style={{
-                fontSize: '2rem',
-                filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))'
+                fontSize: '2.2rem',
+                filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.4))'
               }}
             >
               {icon}
@@ -83,12 +97,12 @@ function DialogProjects({
               style={{
                 fontSize: '0.72rem',
                 fontWeight: 600,
-                padding: '4px 10px',
+                padding: '4px 12px',
                 borderRadius: 20,
-                backgroundColor: isLive ? 'rgba(34, 197, 94, 0.2)' : 'rgba(234, 179, 8, 0.2)',
-                color: isLive ? '#4ade80' : '#fef08a',
-                border: isLive ? '1px solid rgba(74, 222, 128, 0.4)' : '1px solid rgba(254, 240, 138, 0.4)',
-                letterSpacing: '0.04em'
+                backgroundColor: isLive ? 'rgba(48, 209, 88, 0.2)' : 'rgba(255, 159, 10, 0.2)',
+                color: isLive ? '#30d158' : '#ff9f0a',
+                border: isLive ? '1px solid rgba(48, 209, 88, 0.4)' : '1px solid rgba(255, 159, 10, 0.4)',
+                letterSpacing: '0.03em'
               }}
             >
               {status}
@@ -97,10 +111,9 @@ function DialogProjects({
 
           <h3
             style={{
-              margin: '0 0 6px 0',
-              fontSize: '1.25rem',
+              margin: '0 0 4px 0',
+              fontSize: '1.4rem',
               color: '#ffffff',
-              fontFamily: 'EBGaramondBold, sans-serif',
               fontWeight: 700
             }}
           >
@@ -109,8 +122,8 @@ function DialogProjects({
           <p
             style={{
               margin: 0,
-              fontSize: '0.78rem',
-              color: 'rgba(255,255,255,0.7)',
+              fontSize: '0.8rem',
+              color: 'rgba(255, 255, 255, 0.75)',
               letterSpacing: '0.02em'
             }}
           >
@@ -119,14 +132,13 @@ function DialogProjects({
         </div>
 
         {/* Card Body */}
-        <div style={{ padding: '18px 20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <div style={{ padding: '22px', flex: 1, display: 'flex', flexDirection: 'column' }}>
           <p
             style={{
-              fontSize: '0.9rem',
-              color: '#475569',
-              lineHeight: 1.5,
-              margin: '0 0 16px 0',
-              fontFamily: 'EBGaramondRegular, sans-serif'
+              fontSize: '0.92rem',
+              color: 'var(--text-secondary)',
+              lineHeight: 1.6,
+              margin: '0 0 18px 0'
             }}
           >
             {description}
@@ -143,61 +155,123 @@ function DialogProjects({
             }}
           >
             {stack &&
-              stack.slice(0, 3).map((tech, idx) => (
-                <span
-                  key={idx}
-                  style={{
-                    fontSize: '0.72rem',
-                    backgroundColor: '#f1f5f9',
-                    color: '#334155',
-                    padding: '3px 8px',
-                    borderRadius: '6px',
-                    fontWeight: 600
-                  }}
-                >
+              stack.map((tech, idx) => (
+                <span key={idx} className="tech-pill">
                   {tech}
                 </span>
               ))}
-            {stack && stack.length > 3 && (
-              <span
-                style={{
-                  fontSize: '0.72rem',
-                  backgroundColor: '#f8fafc',
-                  color: '#64748b',
-                  padding: '3px 6px',
-                  borderRadius: '6px',
-                  fontWeight: 600
-                }}
-              >
-                +{stack.length - 3} more
-              </span>
-            )}
           </div>
 
+          {/* Action Row */}
           <div
             style={{
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              marginTop: 14,
-              paddingTop: 12,
-              borderTop: '1px solid #f1f5f9'
+              marginTop: 18,
+              paddingTop: 16,
+              borderTop: '1px solid rgba(255, 255, 255, 0.06)'
             }}
           >
-            <span
+            <button
+              onClick={handleClickOpen}
               style={{
-                fontSize: '0.8rem',
-                color: '#006AFF',
-                fontWeight: 'bold'
+                background: 'none',
+                border: 'none',
+                color: '#64D2FF',
+                fontSize: '0.84rem',
+                fontWeight: 600,
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px',
+                padding: '4px 0'
               }}
             >
-              Inspect Specs &amp; Architecture ↗
-            </span>
+              <span>Architecture &amp; QA Specs</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+            {src && src.startsWith('http') && (
+              <a
+                href={src}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '6px 14px',
+                  borderRadius: '8px',
+                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                  color: '#ffffff',
+                  fontSize: '0.8rem',
+                  fontWeight: 600,
+                  border: '1px solid rgba(255, 255, 255, 0.12)',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#0A84FF';
+                  e.currentTarget.style.borderColor = '#0A84FF';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.12)';
+                }}
+              >
+                <span>App Store</span>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            )}
           </div>
+
+          {/* Test in iPhone Studio CTA */}
+          <button
+            onClick={handleTestOnIPhone}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+              width: '100%',
+              padding: '10px 14px',
+              borderRadius: '12px',
+              backgroundColor: 'rgba(10, 132, 255, 0.12)',
+              border: '1px solid rgba(10, 132, 255, 0.3)',
+              color: '#64D2FF',
+              fontSize: '0.84rem',
+              fontWeight: 700,
+              cursor: 'pointer',
+              marginTop: 14,
+              transition: 'all 0.25s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(10, 132, 255, 0.25)';
+              e.currentTarget.style.borderColor = '#0A84FF';
+              e.currentTarget.style.transform = 'translateY(-1px)';
+              e.currentTarget.style.boxShadow = '0 0 20px rgba(10, 132, 255, 0.35)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(10, 132, 255, 0.12)';
+              e.currentTarget.style.borderColor = 'rgba(10, 132, 255, 0.3)';
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          >
+            <span> Test-Drive on iPhone 16 Pro</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
       </div>
 
-      {/* Modal Dialog (macOS window style) */}
+      {/* Modal Dialog (Apple macOS Dark style) */}
       <Dialog
         open={open}
         onClose={handleClose}
@@ -205,9 +279,12 @@ function DialogProjects({
         maxWidth={size}
         PaperProps={{
           style: {
-            borderRadius: 14,
+            borderRadius: 18,
             overflow: 'hidden',
-            boxShadow: '0 25px 60px rgba(0,0,0,0.3)'
+            backgroundColor: '#0d131f',
+            border: '1px solid rgba(255, 255, 255, 0.12)',
+            boxShadow: '0 30px 80px rgba(0, 0, 0, 0.8)',
+            color: '#ffffff'
           }
         }}
       >
@@ -215,9 +292,9 @@ function DialogProjects({
           {/* macOS title bar */}
           <div
             style={{
-              padding: '10px 16px',
-              backgroundColor: '#f1f5f9',
-              borderBottom: '1px solid #e2e8f0',
+              padding: '12px 18px',
+              backgroundColor: 'rgba(255, 255, 255, 0.04)',
+              borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between'
@@ -261,13 +338,13 @@ function DialogProjects({
             </div>
             <span
               style={{
-                fontSize: '0.78rem',
-                color: '#64748b',
+                fontSize: '0.8rem',
+                color: 'var(--text-muted)',
                 fontFamily: 'monospace',
                 fontWeight: 600
               }}
             >
-              {title}
+              {title}.swift · specs
             </span>
             <div style={{ width: 40 }} />
           </div>
@@ -275,57 +352,57 @@ function DialogProjects({
           {/* Modal Header Banner */}
           <div
             style={{
-              background: gradient || 'linear-gradient(135deg, #1e293b, #0f172a)',
+              background: gradient || 'linear-gradient(135deg, #0f172a, #1e293b)',
               padding: '28px 24px',
-              color: '#fff'
+              color: '#ffffff'
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-              <span style={{ fontSize: '2.5rem' }}>{icon}</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
+              <span style={{ fontSize: '2.6rem' }}>{icon}</span>
               <div>
                 <span
                   style={{
-                    fontSize: '0.75rem',
+                    fontSize: '0.72rem',
                     fontWeight: 600,
                     padding: '3px 10px',
                     borderRadius: 20,
-                    backgroundColor: isLive ? 'rgba(34, 197, 94, 0.25)' : 'rgba(234, 179, 8, 0.25)',
-                    color: isLive ? '#4ade80' : '#fef08a',
-                    border: isLive ? '1px solid rgba(74, 222, 128, 0.4)' : '1px solid rgba(254, 240, 138, 0.4)',
+                    backgroundColor: isLive ? 'rgba(48, 209, 88, 0.25)' : 'rgba(255, 159, 10, 0.25)',
+                    color: isLive ? '#30d158' : '#ff9f0a',
+                    border: isLive ? '1px solid rgba(48, 209, 88, 0.4)' : '1px solid rgba(255, 159, 10, 0.4)',
                     display: 'inline-block',
                     marginBottom: 6
                   }}
                 >
                   {status}
                 </span>
-                <h2 style={{ margin: '0 0 4px 0', fontSize: '1.5rem', color: '#fff' }}>{title}</h2>
-                <p style={{ margin: 0, opacity: 0.8, fontSize: '0.85rem' }}>{category}</p>
+                <h2 style={{ margin: '0 0 4px 0', fontSize: '1.6rem', color: '#ffffff' }}>{title}</h2>
+                <p style={{ margin: 0, opacity: 0.8, fontSize: '0.86rem' }}>{category}</p>
               </div>
             </div>
           </div>
 
           {/* Modal Content */}
-          <div style={{ padding: '24px 28px', backgroundColor: '#ffffff' }}>
-            {/* Description */}
-            <div style={{ marginBottom: 20 }}>
+          <div style={{ padding: '26px 28px', backgroundColor: '#090d16' }}>
+            {/* Overview */}
+            <div style={{ marginBottom: 22 }}>
               <h4
                 style={{
                   margin: '0 0 8px 0',
-                  fontSize: '0.82rem',
+                  fontSize: '0.78rem',
                   textTransform: 'uppercase',
-                  color: '#64748b',
-                  letterSpacing: '0.06em'
+                  color: 'var(--apple-blue)',
+                  letterSpacing: '0.08em',
+                  fontWeight: 700
                 }}
               >
-                Overview
+                Executive Summary
               </h4>
               <p
                 style={{
-                  fontSize: '1rem',
-                  lineHeight: '1.6',
-                  color: '#1e293b',
-                  margin: 0,
-                  fontFamily: 'EBGaramondRegular, sans-serif'
+                  fontSize: '0.98rem',
+                  lineHeight: '1.65',
+                  color: '#e2e8f0',
+                  margin: 0
                 }}
               >
                 {description}
@@ -337,24 +414,25 @@ function DialogProjects({
               <div
                 style={{
                   marginBottom: 20,
-                  backgroundColor: '#f8fafc',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: 10,
-                  padding: '14px 18px'
+                  backgroundColor: 'rgba(10, 132, 255, 0.05)',
+                  border: '1px solid rgba(10, 132, 255, 0.2)',
+                  borderRadius: 12,
+                  padding: '16px 20px'
                 }}
               >
                 <h4
                   style={{
                     margin: '0 0 6px 0',
-                    fontSize: '0.82rem',
+                    fontSize: '0.8rem',
                     textTransform: 'uppercase',
-                    color: '#0284c7',
-                    letterSpacing: '0.06em'
+                    color: '#64D2FF',
+                    letterSpacing: '0.06em',
+                    fontWeight: 700
                   }}
                 >
                   🏛️ Architecture &amp; System Design
                 </h4>
-                <p style={{ margin: 0, fontSize: '0.92rem', color: '#334155', lineHeight: 1.5 }}>
+                <p style={{ margin: 0, fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.6 }}>
                   {architecture}
                 </p>
               </div>
@@ -364,42 +442,44 @@ function DialogProjects({
             {qa && (
               <div
                 style={{
-                  marginBottom: 20,
-                  backgroundColor: '#f0fdf4',
-                  border: '1px solid #bbf7d0',
-                  borderRadius: 10,
-                  padding: '14px 18px'
+                  marginBottom: 22,
+                  backgroundColor: 'rgba(48, 209, 88, 0.05)',
+                  border: '1px solid rgba(48, 209, 88, 0.2)',
+                  borderRadius: 12,
+                  padding: '16px 20px'
                 }}
               >
                 <h4
                   style={{
                     margin: '0 0 6px 0',
-                    fontSize: '0.82rem',
+                    fontSize: '0.8rem',
                     textTransform: 'uppercase',
-                    color: '#16a34a',
-                    letterSpacing: '0.06em'
+                    color: '#30D158',
+                    letterSpacing: '0.06em',
+                    fontWeight: 700
                   }}
                 >
                   🧪 Quality Assurance &amp; Testing Discipline
                 </h4>
-                <p style={{ margin: 0, fontSize: '0.92rem', color: '#166534', lineHeight: 1.5 }}>
+                <p style={{ margin: 0, fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.6 }}>
                   {qa}
                 </p>
               </div>
             )}
 
             {/* Technology Stack Tags */}
-            <div style={{ marginBottom: 24 }}>
+            <div style={{ marginBottom: 26 }}>
               <h4
                 style={{
-                  margin: '0 0 8px 0',
-                  fontSize: '0.82rem',
+                  margin: '0 0 10px 0',
+                  fontSize: '0.78rem',
                   textTransform: 'uppercase',
-                  color: '#64748b',
-                  letterSpacing: '0.06em'
+                  color: 'var(--text-muted)',
+                  letterSpacing: '0.08em',
+                  fontWeight: 700
                 }}
               >
-                Tech Stack
+                Core Technologies
               </h4>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {stack &&
@@ -407,13 +487,13 @@ function DialogProjects({
                     <span
                       key={idx}
                       style={{
-                        fontSize: '0.8rem',
-                        backgroundColor: '#f1f5f9',
-                        color: '#0f172a',
+                        fontSize: '0.82rem',
+                        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                        color: '#f8fafc',
                         padding: '5px 12px',
                         borderRadius: 8,
                         fontWeight: 600,
-                        border: '1px solid #e2e8f0'
+                        border: '1px solid rgba(255, 255, 255, 0.1)'
                       }}
                     >
                       {tech}
@@ -428,8 +508,8 @@ function DialogProjects({
                 display: 'flex',
                 gap: '12px',
                 alignItems: 'center',
-                paddingTop: 16,
-                borderTop: '1px solid #e2e8f0'
+                paddingTop: 18,
+                borderTop: '1px solid rgba(255, 255, 255, 0.08)'
               }}
             >
               {src && src.startsWith('http') ? (
@@ -439,19 +519,23 @@ function DialogProjects({
                   rel="noopener noreferrer"
                   style={{
                     textDecoration: 'none',
-                    backgroundColor: '#006AFF',
+                    backgroundColor: '#0A84FF',
                     color: '#ffffff',
                     padding: '10px 22px',
-                    borderRadius: '8px',
+                    borderRadius: '10px',
                     fontWeight: 600,
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '6px',
-                    fontSize: '0.92rem'
+                    gap: '8px',
+                    fontSize: '0.92rem',
+                    boxShadow: '0 4px 16px rgba(10, 132, 255, 0.4)'
                   }}
                 >
                   <span>Download on App Store</span>
-                  <OpenInNewIcon fontSize="small" />
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
                 </a>
               ) : (
                 <a
@@ -459,29 +543,51 @@ function DialogProjects({
                   onClick={handleClose}
                   style={{
                     textDecoration: 'none',
-                    backgroundColor: '#006AFF',
+                    backgroundColor: '#0A84FF',
                     color: '#ffffff',
                     padding: '10px 22px',
-                    borderRadius: '8px',
+                    borderRadius: '10px',
                     fontWeight: 600,
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '6px',
+                    gap: '8px',
                     fontSize: '0.92rem'
                   }}
                 >
-                  <span>Inquire Architecture Details</span>
+                  <span>Inquire Architecture Specs</span>
                 </a>
               )}
+
+              <button
+                onClick={() => {
+                  handleClose();
+                  handleTestOnIPhone();
+                }}
+                style={{
+                  padding: '10px 18px',
+                  borderRadius: '10px',
+                  backgroundColor: 'rgba(10, 132, 255, 0.18)',
+                  border: '1px solid rgba(10, 132, 255, 0.4)',
+                  color: '#64D2FF',
+                  cursor: 'pointer',
+                  fontWeight: 600,
+                  fontSize: '0.92rem',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px'
+                }}
+              >
+                <span> Launch on iPhone 16 Pro</span>
+              </button>
 
               <button
                 onClick={handleClose}
                 style={{
                   padding: '10px 18px',
-                  borderRadius: '8px',
-                  backgroundColor: '#f1f5f9',
-                  border: '1px solid #cbd5e1',
-                  color: '#475569',
+                  borderRadius: '10px',
+                  backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  color: 'var(--text-secondary)',
                   cursor: 'pointer',
                   fontWeight: 600,
                   fontSize: '0.92rem'
@@ -493,7 +599,7 @@ function DialogProjects({
           </div>
         </div>
       </Dialog>
-    </div>
+    </>
   );
 }
 

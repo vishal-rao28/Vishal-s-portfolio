@@ -1,71 +1,56 @@
 import React from 'react';
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import MyList from './MyList';
 
+export default function DrawerComponent() {
+  const [open, setOpen] = React.useState(false);
 
-    
+  const toggleDrawer = (state) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setOpen(state);
+  };
 
-    const useStyles = makeStyles({
-        list: {
-          width: 300,
-          backgroundColor: "#fff",
-          color:"#000",
-          height:"100%",
-          fontWeight:"500 !important",
-        },
-        fullList: {
-          width: 'auto',
-          backgroundColor: "#fff",
-          color:"#000",
-          fontWeight:"500 !important",
-        },
-      });
-      
-      export default function TemporaryDrawer() {
-        const classes = useStyles();
-        const [state, setState] = React.useState({
-          left: false,
-        });
-      
-        const toggleDrawer = (anchor, open) => (event) => {
-          if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-            return;
-          }
-      
-          setState({ ...state, [anchor]: open });
-        };
-      
-        const list = (anchor) => (
-          <div
-            className={clsx(classes.list, {
-              [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-            })}
-            role="presentation"
-            onClick={toggleDrawer(anchor, false)}
-            onKeyDown={toggleDrawer(anchor, false)}
-          >
-            <MyList/>
-
-          </div>
-        );
-
-        
-
-    return (
+  return (
     <div>
-      {['right'].map((anchor) => (
-        <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}><MenuIcon fontSize="large" style={{color:"#333333"}}/></Button>
-          <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
-            {list(anchor)}
-          </Drawer>
-        </React.Fragment>
-      ))}
+      <IconButton
+        onClick={toggleDrawer(true)}
+        aria-label="Open menu"
+        style={{
+          color: '#ffffff',
+          backgroundColor: 'rgba(255, 255, 255, 0.08)',
+          borderRadius: 10,
+          padding: 8
+        }}
+      >
+        <MenuIcon />
+      </IconButton>
+      <Drawer
+        anchor="right"
+        open={open}
+        onClose={toggleDrawer(false)}
+        PaperProps={{
+          style: {
+            backgroundColor: '#090d16',
+            color: '#ffffff',
+            width: 280,
+            borderLeft: '1px solid rgba(255, 255, 255, 0.1)',
+            backgroundImage: 'radial-gradient(circle at 100% 0%, rgba(10, 132, 255, 0.15) 0%, transparent 60%)'
+          }
+        }}
+      >
+        <div
+          role="presentation"
+          onClick={toggleDrawer(false)}
+          onKeyDown={toggleDrawer(false)}
+          style={{ height: '100%' }}
+        >
+          <MyList />
+        </div>
+      </Drawer>
     </div>
   );
-
 }

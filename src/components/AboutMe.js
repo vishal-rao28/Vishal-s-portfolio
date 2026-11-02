@@ -1,129 +1,205 @@
 import React from 'react';
-import instaLoop from '../assets/img/instaLoop.gif';
-import vishalPhoto from '../assets/img/vishal_optimized.jpg';
 
 function AboutMe() {
-  const [showCard, setShowCard] = React.useState(true);
-  const onClick2 = () => setShowCard(false);
+  const pillars = [
+    {
+      icon: '',
+      title: 'Native Apple Engineering',
+      color: '#0A84FF',
+      gradient: 'linear-gradient(135deg, rgba(10, 132, 255, 0.15) 0%, rgba(10, 132, 255, 0.03) 100%)',
+      borderColor: 'rgba(10, 132, 255, 0.25)',
+      description:
+        'Deep mastery of Swift, SwiftUI, and UIKit. Crafting responsive cross-device layouts for iPhone and iPad (Viana 360), reactive data streams with Combine, local persistence via Core Data, and system integrations with HealthKit and MapKit.'
+    },
+    {
+      icon: '🧠',
+      title: 'On-Device Core ML & AI',
+      color: '#BF5AF2',
+      gradient: 'linear-gradient(135deg, rgba(191, 90, 242, 0.15) 0%, rgba(191, 90, 242, 0.03) 100%)',
+      borderColor: 'rgba(191, 90, 242, 0.25)',
+      description:
+        'Leveraging a B.Tech in Artificial Intelligence & Data Science to deploy quantized neural networks directly to the Apple Neural Engine (ANE). Engineered real-time clinical vision diagnostics in Smart Ulcer Predictor with zero cloud dependency.'
+    },
+    {
+      icon: '🛡️',
+      title: 'Industrial QA & Testing',
+      color: '#30D158',
+      gradient: 'linear-gradient(135deg, rgba(48, 209, 88, 0.15) 0%, rgba(48, 209, 88, 0.03) 100%)',
+      borderColor: 'rgba(48, 209, 88, 0.25)',
+      description:
+        'Unrivaled cross-discipline quality engineering across 4 pillars: Selenium (Web), Appium (iOS & Android), backend vulnerability assessments, and load benchmarking. Ensuring zero crashes, bulletproof security, and seamless App Store approval.'
+    }
+  ];
+
+  const highlights = [
+    {
+      title: '2-Month Fast Promotion',
+      subtitle: 'Intern to Full-Time iOS Developer at Viana Soft',
+      badge: 'Recognition',
+      badgeColor: '#0A84FF'
+    },
+    {
+      title: 'Technical Trainer & Mentor',
+      subtitle: 'Training aspiring mobile engineers at SIMATS',
+      badge: 'Leadership',
+      badgeColor: '#30D158'
+    },
+    {
+      title: 'Published Research Author',
+      subtitle: 'Paper on iOS Development in IJRPR Journal',
+      badge: 'Academic',
+      badgeColor: '#BF5AF2'
+    },
+    {
+      title: 'AWS Cloud Certified',
+      subtitle: 'Cloud Computing Architecture certification',
+      badge: 'Certified',
+      badgeColor: '#FF9F0A'
+    }
+  ];
 
   return (
-    <div id="about" style={{ display: 'flex', alignItems: 'center', marginTop: '60px' }}>
-      <img className="instaLoop" src={instaLoop} alt="iPhone animation" width="30%" />
-      <div className="aboutMe" style={{ width: '100%' }}>
-        <h1>
-          About Me <strong style={{ color: '#f5576c' }}>.</strong>
-        </h1>
-        <p className="para" style={{ width: '85%', marginLeft: 'auto', marginRight: 'auto', fontSize: '1.05rem', lineHeight: '1.7' }}>
-          I'm <strong>Vishal Rao M</strong> — an <strong>iOS Developer &amp; Technical Engineer</strong> with a strong builder's mindset and deep expertise in Apple's ecosystem and robust software testing.
-          <br />
-          <br />
-          With professional roles at <strong>SIMATS Engineering Institution</strong>, <strong>Viana Soft</strong>, and <strong>Greatify</strong>, I blend native mobile engineering (<strong>Swift, SwiftUI, UIKit, Core ML, Combine</strong>) with end-to-end technical QA across four core disciplines (<strong>Selenium, Appium, Load Testing, and Backend Vulnerability Testing</strong>).
-          <br />
-          <br />
-          From enterprise institutional platforms like <strong>Viana 360</strong> (iPhone &amp; iPad) and AI diagnostics like <strong>Smart Ulcer Predictor</strong> and <strong>BreathTrack</strong>, to child tracking systems and wellness apps, I own the full lifecycle — requirement engineering, architecture, API integration, testing, and App Store deployment.
+    <section id="about" style={{ paddingTop: '80px', paddingBottom: '60px' }}>
+      {/* Section Header */}
+      <div className="section-header">
+        <span className="section-tag">ENGINEERING PHILOSOPHY</span>
+        <h2 className="section-title">
+          Where Native Precision Meets <span className="gradient-text-blue">Industrial Quality</span>.
+        </h2>
+        <p className="section-subtitle">
+          I bridge the gap between creative Apple design thinking and rock-solid software verification — engineering apps that look exceptional and run flawlessly under load.
         </p>
-        <br />
-        <p className="cartoonText" style={{ fontSize: '150%', color: '#f5576c', textAlign: 'center' }}>
-          ~ Building robust, production-tested mobile experiences!
-        </p>
+      </div>
 
-        {/* Stats highlight row */}
+      {/* Story & Background Box */}
+      <div
+        className="glass-card"
+        style={{
+          padding: '36px',
+          marginBottom: '40px',
+          border: '1px solid rgba(255, 255, 255, 0.08)'
+        }}
+      >
         <div
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '24px',
-            flexWrap: 'wrap',
-            margin: '24px auto',
-            maxWidth: '650px'
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '36px',
+            alignItems: 'center'
           }}
+          className="about-story-grid"
         >
-          <div style={{ textAlign: 'center', minWidth: '100px' }}>
-            <h2 style={{ fontSize: '2.2rem', margin: 0, color: '#006AFF' }}>6+</h2>
-            <p style={{ margin: 0, opacity: 0.6, fontSize: '0.9rem' }}>Projects Built</p>
+          <div>
+            <h3 style={{ fontSize: '1.45rem', marginBottom: '16px', color: '#ffffff' }}>
+              Full-Lifecycle Mobile Ownership
+            </h3>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px' }}>
+              At <strong>SIMATS Engineering Institution</strong> and <strong>Viana Soft</strong>, I own the entire engineering lifecycle: translating complex institutional and clinical requirements into sleek Swift architectures, integrating REST APIs, running automated testing pipelines, and driving smooth App Store reviews.
+            </p>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: '1.7', margin: 0 }}>
+              Recognized for delivery velocity, I was promoted from intern to full-time iOS developer in just two months. Today, I also double as a <strong>Technical Trainer</strong>, mentoring developers in Swift, SwiftUI, App Store deployment, and industry-grade testing practices.
+            </p>
           </div>
-          <div style={{ textAlign: 'center', minWidth: '100px' }}>
-            <h2 style={{ fontSize: '2.2rem', margin: 0, color: '#27C841' }}>5</h2>
-            <p style={{ margin: 0, opacity: 0.6, fontSize: '0.9rem' }}>Live on App Store</p>
-          </div>
-          <div style={{ textAlign: 'center', minWidth: '100px' }}>
-            <h2 style={{ fontSize: '2.2rem', margin: 0, color: '#FEBD2C' }}>4</h2>
-            <p style={{ margin: 0, opacity: 0.6, fontSize: '0.9rem' }}>Testing Disciplines</p>
-          </div>
-          <div style={{ textAlign: 'center', minWidth: '100px' }}>
-            <h2 style={{ fontSize: '2.2rem', margin: 0, color: '#f5576c' }}>B.Tech</h2>
-            <p style={{ margin: 0, opacity: 0.6, fontSize: '0.9rem' }}>AI &amp; Data Science</p>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '16px'
+            }}
+          >
+            {highlights.map((item, idx) => (
+              <div
+                key={idx}
+                style={{
+                  padding: '20px',
+                  backgroundColor: 'rgba(255, 255, 255, 0.025)',
+                  border: '1px solid rgba(255, 255, 255, 0.06)',
+                  borderRadius: '14px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: '0.68rem',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.06em',
+                    color: item.badgeColor,
+                    marginBottom: '8px'
+                  }}
+                >
+                  {item.badge}
+                </span>
+                <h4 style={{ fontSize: '1.05rem', margin: '0 0 6px 0', color: '#ffffff', lineHeight: 1.3 }}>
+                  {item.title}
+                </h4>
+                <p style={{ margin: 0, fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+                  {item.subtitle}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
+      </div>
 
-        {showCard ? (
+      {/* 3 Core Engineering Pillars */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '24px'
+        }}
+      >
+        {pillars.map((pillar, index) => (
           <div
-            className="idCard idCard2"
+            key={index}
+            className="glass-card"
             style={{
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              width: '75%',
+              padding: '30px',
+              background: pillar.gradient,
+              borderColor: pillar.borderColor,
               display: 'flex',
-              flexDirection: 'column',
-              marginTop: 20,
-              border: '2px solid lightgrey',
-              borderRadius: 10,
-              boxShadow: '0 8px 24px rgba(0,0,0,0.06)'
+              flexDirection: 'column'
             }}
           >
             <div
               style={{
-                padding: '6px 12px',
-                width: '100%',
-                backgroundColor: '#ededed',
-                fontSize: '150%',
-                borderBottom: '1px solid lightgrey',
-                height: 28,
-                borderTopLeftRadius: 10,
-                borderTopRightRadius: 10,
+                width: '48px',
+                height: '48px',
+                borderRadius: '12px',
+                backgroundColor: 'rgba(255, 255, 255, 0.08)',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'start',
-                boxSizing: 'border-box'
+                justifyContent: 'center',
+                fontSize: '1.6rem',
+                marginBottom: '20px',
+                border: `1px solid ${pillar.borderColor}`
               }}
             >
-              <h1 onClick={onClick2} style={{ zIndex: 50, margin: '0 4px', cursor: 'pointer', lineHeight: 0 }} title="Close Card">
-                <strong style={{ color: '#FE5E58' }}>.</strong>
-              </h1>
-              <h1 style={{ margin: '0 4px', lineHeight: 0 }}>
-                <strong style={{ color: '#FEBD2C' }}>.</strong>
-              </h1>
-              <h1 style={{ margin: '0 4px', lineHeight: 0 }}>
-                <strong style={{ color: '#27C841' }}>.</strong>
-              </h1>
+              {pillar.icon}
             </div>
-            <a
-              href="https://linkedin.com/in/vishal-rao-173a232b9"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: 'none', color: 'inherit' }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', padding: 20 }}>
-                <img
-                  src={vishalPhoto}
-                  className="dp2"
-                  alt="Vishal Rao M"
-                  style={{ width: 64, height: 64, borderRadius: '50%', objectFit: 'cover' }}
-                />
-                <div className="instaTag" style={{ paddingLeft: 20, fontSize: '80%' }}>
-                  <h1 style={{ margin: '0 0 4px 0', fontSize: '1.25rem' }}>Vishal Rao M</h1>
-                  <h3 style={{ fontFamily: 'EBGaramondRegular', opacity: 0.6, margin: 0 }}>
-                    linkedin.com/in/vishal-rao-173a232b9 ↗
-                  </h3>
-                </div>
-              </div>
-            </a>
+            <h3 style={{ fontSize: '1.3rem', marginBottom: '12px', color: '#ffffff' }}>
+              {pillar.title}
+            </h3>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.94rem', lineHeight: '1.65', margin: 0 }}>
+              {pillar.description}
+            </p>
           </div>
-        ) : (
-          <br />
-        )}
+        ))}
       </div>
-    </div>
+
+      <style>{`
+        @media (max-width: 860px) {
+          .about-story-grid {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+          }
+        }
+      `}</style>
+    </section>
   );
 }
 
