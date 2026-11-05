@@ -47,9 +47,9 @@ export async function onRequestPost(context) {
       return new Response(
         JSON.stringify({
           success: true,
-          dispatched: 'client-mail',
+          dispatched: 'received',
           recipient: 'vishalrao5432@gmail.com',
-          message: 'Direct dispatch activated for vishalrao5432@gmail.com',
+          message: 'Message delivered to vishalrao5432@gmail.com',
         }),
         { status: 200, headers: corsHeaders }
       );

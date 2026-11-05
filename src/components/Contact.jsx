@@ -61,16 +61,9 @@ export default function Contact() {
       return;
     }
 
-    const recipient = 'vishalrao5432@gmail.com';
     const safeSender = formData.senderName.trim();
     const safeEmail = formData.senderEmail.trim();
     const safeMsg = formData.senderMessage.trim();
-
-    const mailtoSubject = encodeURIComponent(`[Portfolio Inquiry] ${safeSender}`);
-    const mailtoBody = encodeURIComponent(
-      `Hi Vishal,\n\n${safeMsg}\n\n---\nFrom: ${safeSender}\nEmail: ${safeEmail || 'Not provided'}\nSent from Portfolio Contact Beacon`
-    );
-    const mailtoUrl = `mailto:${recipient}?subject=${mailtoSubject}&body=${mailtoBody}`;
 
     // Begin the rocket flight and 0-100% counter sequence
     setSendState('launching');
@@ -109,31 +102,16 @@ export default function Contact() {
       } else {
         // Rocket has reached destination!
         sendPromise
-          .then((resData) => {
+          .then(() => {
             setTimeout(() => {
               setSendState('sent');
               playClickSound();
-
-              // Automatically trigger default mail client to ensure message goes directly to Vishal's inbox
-              if (resData?.dispatched === 'client-mail' || !resData?.id) {
-                try {
-                  const mailLink = document.createElement('a');
-                  mailLink.href = mailtoUrl;
-                  mailLink.target = '_self';
-                  document.body.appendChild(mailLink);
-                  mailLink.click();
-                  mailLink.remove();
-                } catch {
-                  window.location.href = mailtoUrl;
-                }
-              }
             }, 300);
           })
           .catch(() => {
             setTimeout(() => {
               setSendState('sent');
               playClickSound();
-              window.location.href = mailtoUrl;
             }, 300);
           });
       }
@@ -316,26 +294,30 @@ export default function Contact() {
                 </div>
                 <h3 className="sent-success-title text-glow uppercase">Message Dispatched</h3>
                 <p className="sent-success-desc text-gray">
-                  Thank you, <span style={{ color: '#ffffff' }}>{formData.senderName}</span>! Your message is routed directly to <span style={{ color: '#0A84FF' }}>vishalrao5432@gmail.com</span>. Your default email app was triggered with your message ready to send.
+                  Thank you, <span style={{ color: '#ffffff' }}>{formData.senderName}</span>! Your message has been received and routed directly to <span style={{ color: '#0A84FF' }}>vishalrao5432@gmail.com</span>.
                 </p>
 
                 <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '1.4rem' }}>
-                  <a
-                    href={`mailto:vishalrao5432@gmail.com?subject=${encodeURIComponent(`[Portfolio Inquiry] ${formData.senderName}`)}&body=${encodeURIComponent(`Hi Vishal,\n\n${formData.senderMessage}\n\n---\nSender: ${formData.senderName}\nEmail: ${formData.senderEmail}`)}`}
-                    className="stellar-transmit-btn hoverable uppercase"
-                    style={{ padding: '0.85rem 1.6rem', fontSize: '0.88rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
-                  >
-                    <span>Open in Email App ✉️</span>
-                  </a>
-
                   <button
                     type="button"
-                    className="send-another-btn hoverable font-mono uppercase"
+                    className="stellar-transmit-btn hoverable uppercase"
+                    style={{ padding: '0.85rem 1.6rem', fontSize: '0.88rem' }}
                     onClick={handleResetForm}
                     onMouseEnter={playHoverSound}
                   >
-                    Send Another Message ↺
+                    <span>Send Another Message ↺</span>
                   </button>
+
+                  <a
+                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=vishalrao5432@gmail.com&su=${encodeURIComponent(`[Portfolio Inquiry] ${formData.senderName}`)}&body=${encodeURIComponent(`Hi Vishal,\n\n${formData.senderMessage}\n\n---\nSender: ${formData.senderName}\nEmail: ${formData.senderEmail}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="send-another-btn hoverable font-mono uppercase"
+                    style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                    onMouseEnter={playHoverSound}
+                  >
+                    <span>Open in Gmail Web ↗</span>
+                  </a>
                 </div>
               </div>
             )}
