@@ -6,51 +6,51 @@ import MaskedTitle from './MaskedTitle';
 const categories = [
   {
     id: '01',
-    tag: 'NATIVE APPLE ECOSYSTEM',
-    title: 'iOS & iPadOS Architecture',
-    summary: 'Production apps built with Swift, SwiftUI, UIKit, Combine, and strict Apple Human Interface Guidelines.',
-    telemetry: '5+ App Store Apps • Apple HIG',
-    skills: ['Swift', 'SwiftUI', 'UIKit', 'Combine', 'Xcode', 'CocoaPods / SPM']
+    tag: 'NATIVE MOBILE ENGINEERING',
+    title: 'SwiftUI & UIKit Architecture',
+    summary: 'Full-lifecycle iOS & iPadOS application development: responsive SwiftUI, production UIKit interfaces, Xcode tooling, and App Store delivery.',
+    telemetry: 'Swift • SwiftUI & UIKit • App Store Shipped',
+    skills: ['Swift', 'SwiftUI', 'UIKit', 'Xcode', 'iPadOS Adaptability', 'Apple HIG']
   },
   {
     id: '02',
-    tag: 'ON-DEVICE INTELLIGENCE',
-    title: 'Core ML & Vision Framework',
-    summary: 'Integrating on-device neural networks, Vision pipelines, and quantized inference on Apple Neural Engine.',
-    telemetry: 'ANE Inference • Zero Cloud Latency',
-    skills: ['Core ML', 'Vision Framework', 'Apple Neural Engine', 'Model Quantization', 'Deep Learning', 'AVFoundation']
+    tag: 'STRUCTURED QA & SECURITY',
+    title: '4-Discipline QA & Testing Gates',
+    summary: 'Industrial test coverage across four disciplines: Selenium web automation, Appium mobile testing, backend vulnerability audits, and load stress benchmarking.',
+    telemetry: 'Selenium • Appium • Vulnerability • Load Testing',
+    skills: ['Appium (Mobile QA)', 'Selenium (Web QA)', 'Backend Vulnerability Testing', 'Server Load Testing', 'Postman API Testing', 'Defect Resolution']
   },
   {
     id: '03',
-    tag: 'QUALITY ASSURANCE GATES',
-    title: 'Automated Testing Architectures',
-    summary: 'Rigorous end-to-end verification across 4 gates: Selenium, Appium, XCTest, and backend latency profiling.',
-    telemetry: '4 QA Gates • 0% Crash Policy',
-    skills: ['Selenium', 'Appium', 'XCTest / XCUITest', 'Postman API Testing', 'Regression Suites', 'Performance Profiling']
+    tag: 'GEOSPATIAL & NAVIGATION',
+    title: 'Core Location & MapKit Engine',
+    summary: 'Real-time GPS coordinate streaming, sub-meter CoreLocation geofencing boundaries, interactive MapKit annotations, and synchronized dual companion apps.',
+    telemetry: 'Sub-Meter GPS • MapKit • Real-Time Tracking',
+    skills: ['Core Location', 'MapKit', 'Sub-Meter Geofencing', 'Live GPS Telemetry', 'APNs Push Notifications', 'Background Region Monitoring']
   },
   {
     id: '04',
-    tag: 'HARDWARE & SENSORS',
-    title: 'HealthKit, GPS & Persistence',
-    summary: 'Real-time physiological vitals telemetry, sub-meter GPS geofencing, and offline-first Core Data persistence.',
-    telemetry: 'HealthKit • Sub-Meter CoreLocation',
-    skills: ['HealthKit', 'Core Location & MapKit', 'Core Data', 'PhotosUI', 'Background Tasks', 'APNs Push']
+    tag: 'REAL-TIME DATA & BACKEND',
+    title: 'Firebase & RESTful API Pipeline',
+    summary: 'Robust client-server integration utilizing Firebase Realtime Database, Firebase Authentication, APNs push alerts, and Postman-validated REST APIs.',
+    telemetry: 'Firebase Realtime DB • Auth • REST APIs • Postman',
+    skills: ['Firebase Realtime DB', 'Firebase Authentication', 'RESTful APIs', 'Postman Validation', 'Push Notifications', 'Role-Based Access Control']
   },
   {
     id: '05',
-    tag: 'NETWORKING & BACKEND',
-    title: 'REST APIs, Firebase & Sockets',
-    summary: 'Robust asynchronous networking with URLSession, Combine publishers, Firebase realtime DB, and WebSockets.',
-    telemetry: 'URLSession • Reactive Publishers',
-    skills: ['RESTful APIs', 'Firebase Realtime DB', 'URLSession', 'JSON Schema Parsing', 'WebSockets', 'OAuth 2.0 / JWT']
+    tag: 'CLOUD ARCHITECTURE & APPLIED AI',
+    title: 'AWS Cloud & AI/Data Science',
+    summary: 'Certified AWS Cloud Computing Architect, B.Tech in Artificial Intelligence & Data Science, and published iOS research author in the International Journal (IJRPR).',
+    telemetry: 'AWS Certified • B.Tech AI & DS • IJRPR Published',
+    skills: ['AWS Cloud Architecture', 'AI & Data Science', 'IJRPR Published Research', 'Deep Learning & Neural Nets', 'Core ML & Vision', 'Enterprise ERP Systems']
   },
   {
     id: '06',
-    tag: 'DELIVERY & LEADERSHIP',
-    title: 'Architecture, CI/CD & Mentorship',
-    summary: 'Clean MVVM-C architectures, Git version control, TestFlight builds, App Store submissions, and developer training.',
-    telemetry: 'MVVM-C • TestFlight • SIMATS Trainer',
-    skills: ['MVVM-C Pattern', 'Git / GitHub', 'TestFlight Staging', 'App Store Review Guidelines', 'CI/CD Pipelines', 'Technical Training']
+    tag: 'ENGINEERING LEADERSHIP',
+    title: 'Technical Training & App Store Release',
+    summary: 'Mentoring aspiring engineers at SIMATS in Swift, SwiftUI architecture, debugging, and interview readiness, leading code reviews, and steering App Store reviews.',
+    telemetry: 'SIMATS Trainer • Git & Agile • App Store Connect',
+    skills: ['Technical Training & Mentorship', 'SwiftUI Architecture Coaching', 'App Store Review Guidelines', 'Git Version Control', 'Agile Sprints', 'UI/UX Best Practices']
   }
 ];
 

@@ -16,10 +16,10 @@ export default function About() {
               I’m Vishal Rao M, an iOS Developer and Technical Trainer at SIMATS Engineering Institution with a B.Tech in Artificial Intelligence &amp; Data Science. I architect and deploy high-performance native iOS applications using Swift, SwiftUI, UIKit, and Core ML, with 5+ apps shipped live to the Apple App Store. I specialize in building reactive, enterprise-grade architectures (MVVM, Combine) and enforcing industrial quality through automated QA verification across Web, Android, iOS, and API backends.
             </p>
             <div className="font-mono text-gray skill-list text-sm">
-              <p><span style={{ color: '#0A84FF' }}>●</span> Native iOS Architecture (SwiftUI, UIKit, Combine)</p>
-              <p><span style={{ color: '#BF5AF2' }}>●</span> On-Device Intelligence &amp; Core ML (Apple Neural Engine)</p>
-              <p><span style={{ color: '#30D158' }}>●</span> Industrial QA &amp; Automated Testing (Selenium, Appium)</p>
-              <p><span style={{ color: '#FF9F0A' }}>●</span> Live App Store Deployments &amp; Performance Telemetry</p>
+              <p><span style={{ color: '#0A84FF' }}>●</span> Native iOS &amp; iPadOS Architecture (SwiftUI, UIKit, Xcode, Core Location)</p>
+              <p><span style={{ color: '#BF5AF2' }}>●</span> 4-Discipline Automated QA (Selenium, Appium, Vulnerability &amp; Load Testing)</p>
+              <p><span style={{ color: '#30D158' }}>●</span> Backend &amp; Cloud Systems (Firebase, REST APIs, AWS Cloud Architecture)</p>
+              <p><span style={{ color: '#FF9F0A' }}>●</span> Leadership &amp; Delivery (SIMATS Technical Trainer, IJRPR Published Author)</p>
             </div>
           </div>
 
