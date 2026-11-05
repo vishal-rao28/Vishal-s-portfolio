@@ -619,3 +619,301 @@
   70% { transform: scale(1.15); opacity: 1; }
   100% { transform: scale(1); opacity: 1; }
 }
+
+/* ==========================================================================
+   Direct Communication & Social Channels Grid (GitHub, LinkedIn, Insta, WhatsApp)
+   ========================================================================== */
+
+.contact-channels-section {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto 3.2rem auto;
+}
+
+.contact-channels-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding: 0 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.channels-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.channels-status-beacon {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: #10b981;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.contact-channels-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.channel-card {
+  position: relative;
+  background: rgba(14, 14, 22, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 1.25rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  min-height: 165px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.channel-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 1.2rem;
+}
+
+.channel-icon-pod {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.github-pod {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.linkedin-pod {
+  background: rgba(10, 102, 194, 0.15);
+  border: 1px solid rgba(10, 102, 194, 0.35);
+  color: #0A66C2;
+}
+
+.instagram-pod {
+  background: rgba(225, 48, 108, 0.15);
+  border: 1px solid rgba(225, 48, 108, 0.35);
+  color: #E1306C;
+}
+
+.whatsapp-pod {
+  background: rgba(37, 211, 102, 0.15);
+  border: 1px solid rgba(37, 211, 102, 0.35);
+  color: #25D366;
+}
+
+.channel-action-badge {
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.channel-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.channel-category {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.channel-name {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  margin: 0;
+  transition: color 0.25s ease;
+}
+
+.channel-handle {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Hover States with signature halos */
+.github-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 255, 255, 0.2);
+}
+.github-card:hover .github-pod {
+  background: #ffffff;
+  color: #050505;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+.github-card:hover .channel-action-badge {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.linkedin-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(10, 102, 194, 0.6);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(10, 102, 194, 0.35);
+}
+.linkedin-card:hover .linkedin-pod {
+  background: #0A66C2;
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(10, 102, 194, 0.7);
+}
+.linkedin-card:hover .channel-action-badge {
+  border-color: #0A66C2;
+  color: #38bdf8;
+}
+
+.instagram-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(225, 48, 108, 0.6);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(225, 48, 108, 0.35);
+}
+.instagram-card:hover .instagram-pod {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(225, 48, 108, 0.7);
+}
+.instagram-card:hover .channel-action-badge {
+  border-color: #E1306C;
+  color: #f472b6;
+}
+
+.whatsapp-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(37, 211, 102, 0.6);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(37, 211, 102, 0.35);
+}
+.whatsapp-card:hover .whatsapp-pod {
+  background: #25D366;
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(37, 211, 102, 0.7);
+}
+.whatsapp-card:hover .channel-action-badge {
+  border-color: #25D366;
+  color: #4ade80;
+}
+
+/* Light Theme Adaptations */
+body.light-theme .channel-card,
+[data-theme='light'] .channel-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+body.light-theme .channel-name,
+[data-theme='light'] .channel-name {
+  color: #0f172a;
+}
+
+body.light-theme .channel-category,
+[data-theme='light'] .channel-category {
+  color: #64748b;
+}
+
+body.light-theme .channel-handle,
+[data-theme='light'] .channel-handle {
+  color: #475569;
+}
+
+body.light-theme .channels-eyebrow,
+[data-theme='light'] .channels-eyebrow {
+  color: #475569;
+}
+
+body.light-theme .channel-action-badge,
+[data-theme='light'] .channel-action-badge {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #334155;
+}
+
+body.light-theme .github-pod,
+[data-theme='light'] .github-pod {
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #0f172a;
+}
+
+body.light-theme .github-card:hover,
+[data-theme='light'] .github-card:hover {
+  border-color: #0f172a;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12), 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .linkedin-card:hover,
+[data-theme='light'] .linkedin-card:hover {
+  border-color: #0A66C2;
+  box-shadow: 0 14px 32px rgba(10, 102, 194, 0.2), 0 0 20px rgba(10, 102, 194, 0.15);
+}
+
+body.light-theme .instagram-card:hover,
+[data-theme='light'] .instagram-card:hover {
+  border-color: #E1306C;
+  box-shadow: 0 14px 32px rgba(225, 48, 108, 0.2), 0 0 20px rgba(225, 48, 108, 0.15);
+}
+
+body.light-theme .whatsapp-card:hover,
+[data-theme='light'] .whatsapp-card:hover {
+  border-color: #25D366;
+  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.2), 0 0 20px rgba(37, 211, 102, 0.15);
+}
+
+/* Responsive Grid */
+@media (max-width: 900px) {
+  .contact-channels-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .contact-channels-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-channels-section {
+    margin-bottom: 2.2rem;
+  }
+}
