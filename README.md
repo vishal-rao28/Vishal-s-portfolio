@@ -1,8 +1,13 @@
-# Vishal Rao M — iOS Developer & Technical Engineer
+# Vishal Rao M — iOS Developer & Technical Engineer Portfolio
 
-> **Apple Native Engineering · SwiftUI & UIKit Architecture · On-Device Core ML · Industrial Automated QA**
+[![React 19](https://img.shields.io/badge/React-19.2-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![Vite 8](https://img.shields.io/badge/Vite-8.0_(Rolldown)-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
+[![Three.js](https://img.shields.io/badge/Three.js-WebGL_Raymarching-black?logo=three.js)](https://threejs.org/)
+[![GSAP](https://img.shields.io/badge/GSAP-3.15_ScrollTrigger-88CE02?logo=greensock&logoColor=black)](https://greensock.com/gsap/)
+[![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-Edge_Runtime-F38020?logo=cloudflare)](https://workers.cloudflare.com/)
+[![Lenis Scroll](https://img.shields.io/badge/Lenis-Smooth_Scroll-black)](https://github.com/darkroomengineering/lenis)
 
-A high-performance personal portfolio showcasing genuine production native iOS applications shipped live to the Apple App Store, interactive Apple hardware device studios, system architecture flows, and cross-discipline QA verification pipelines.
+A high-performance, creative agency-grade developer portfolio architected with **React 19**, custom **WebGL GLSL raymarching shaders**, **GSAP ScrollTrigger**, and smooth momentum physics. Showcases production iOS applications live on the Apple App Store, on-device Core ML neural models, automated QA verification pipelines, and verified engineering telemetry.
 
 ---
 
@@ -10,84 +15,79 @@ A high-performance personal portfolio showcasing genuine production native iOS a
 
 ### 1. [Viana 360](https://apps.apple.com/in/app/viana-360/id6760163659) · Live on App Store
 - **Role:** Lead iOS Engineer (Viana Soft / SIMATS)
-- **Tech:** Swift, SwiftUI, UIKit, Combine Reactive State, MapKit GPS Telemetry, Core Data, RESTful APIs, APNs Push
-- **Impact:** Comprehensive enterprise mobile platform for Saveetha Institute of Medical and Technical Sciences (SIMATS). Streamlines everyday workforce management, GPS-geofenced biometric attendance clock-ins, instant leave submissions, and institutional communications.
+- **Tech:** Swift, SwiftUI, UIKit, Combine Reactive State, CoreLocation Geofencing, APNs Push, iPadOS SplitView, XCTest
+- **Impact:** Comprehensive institutional mobile platform for Saveetha Institute of Medical and Technical Sciences (SIMATS). Streamlines everyday workforce management, GPS-geofenced biometric attendance clock-ins, instant leave submissions, and institutional communications.
 
-### 2. Smart Ulcer Predictor · Clinical On-Device AI
+### 2. [Smart Ulcer Predictor](https://apps.apple.com/in/app/smart-ulcer-predictor/id6755873140) · Clinical On-Device AI
 - **Tech:** Swift, SwiftUI, Core ML, Vision Framework, Convolutional Neural Networks, Apple Neural Engine (ANE)
-- **Impact:** Clinical decision-support mobile application employing quantized deep learning computer vision on-device to evaluate skin ulcer imagery (Granulation, Slough, Necrotic, Epithelialisation) with sub-second inference and zero cloud latency.
+- **Impact:** Clinical decision-support mobile application employing quantized deep learning computer vision on-device to classify skin ulcer imagery (Granulation, Slough, Necrotic, Epithelialisation) with sub-second inference and zero cloud latency.
 
-### 3. BreathTrack · MedTech Telehealth Platform
-- **Tech:** Swift, SwiftUI, Apple HealthKit, Combine, REST APIs, Swift Charts
+### 3. [BreathTrack](https://apps.apple.com/in/app/breathtrack/id6804558579) · MedTech Telehealth Platform
+- **Tech:** Swift, SwiftUI, Apple HealthKit, Combine, REST APIs, Swift Charts, Core Data
 - **Impact:** Chronic respiratory management application tracking SpO2, forced vital capacity (FVC), medication adherence, and clinician ABG diagnostic reviews.
 
-### 4. CoreCare · Digital Health & Wellness
+### 4. [CoreCare](https://apps.apple.com/in/app/corecare/id6753789920) · Digital Health & Cardiology
 - **Tech:** Swift, SwiftUI, HealthKit, Core Data, PDFKit, Apple HIG Custom Controls
 - **Impact:** All-in-one cardiovascular wellness companion featuring real-time BPM telemetry, automated PDF clinical reporting, and offline-first persistence.
 
-### 5. HairJourneyTracker · Health & Lifestyle
-- **Tech:** Swift, SwiftUI, PhotosUI, Core Data, UserNotifications
+### 5. [HairJourneyTracker](https://apps.apple.com/in/app/hairjourneytracker/id6760697820) · Health & Lifestyle
+- **Tech:** Swift, SwiftUI, PhotosUI, Core Data, UserNotifications, Combine
 - **Impact:** Visual photographic milestone companion capturing high-resolution treatment progress across customized calendar timeframes.
 
----
-
-## 🛠️ Competency Matrix
-
-- **iOS & Apple Ecosystem:** Swift (Expert), SwiftUI (Advanced), UIKit (Advanced), Combine (Advanced), Core Data, Core ML, Apple HealthKit, MapKit & CoreLocation, Swift Charts, Xcode & TestFlight.
-- **Automated QA & Security:** Appium (iOS & Android Automation), Selenium (Web Regressions), Postman (REST API Validation), Load Testing (Server Stress & Latency Benchmarks), Backend Vulnerability Risk Auditing, CI/CD Automated Verification Pipelines.
-- **AI, Machine Learning & Vision:** Vision Framework, Model Quantization (Apple Neural Engine), Deep Neural Networks (CNNs), Python, Data Science (Saveetha B.Tech AI & DS).
-- **Backend & Cloud Infrastructure:** RESTful APIs, Firebase, Git & GitHub CI/CD, AWS Cloud Architecture (Certified), Java, C/C++, Figma Apple HIG Design Specs.
+### 6. School Bus Child Tracker · Safety & Location Telemetry
+- **Tech:** Swift, MapKit, Core Location, Firebase Realtime DB, Geofencing
+- **Impact:** Dual-app safety ecosystem providing live coordinate streaming, dynamic ETA calculation, and instant geofence arrival notifications for parents and drivers.
 
 ---
 
-## 💻 Portfolio Architecture & UI Features
+## 🌟 Interface Highlights & Capabilities
 
-- **Apple Liquid Pearl Glass System:** Custom CSS glassmorphism architecture rendered with specular reflections, crystalline bevels, and responsive sapphire sheens in both Dark Mode and Light Mode.
-- **Glossy Highlighted Icon Pods (Light Mode):** Jewel-like enamel icon pods featuring 3D convex glass bevels, specular top-glints, and chromatic colored glows.
-- **Interactive Apple iPhone Studio:** Panoramic multi-device suite presenting authentic edge-to-edge App Store production screens inside realistic Apple iPhone 18 Pro Max hardware frames.
-- **Gesture Theme Dock:** Floating interactive theme controller with spring drag physics for fluid switching between Dark Mode and Light Mode.
+### 1. Raymarched Event Horizon & 3D Wireframe Globe
+A custom GPU raymarched black hole accretion disk with relativistic Doppler beaming, dynamic inclination mouse parallax, and an interactive 3D Orbit exploration mode.
+
+### 2. Engineering Philosophy & Real-Time Telemetry Deck
+Overview of decoupled architectural design principles paired with a verified telemetry command deck for GitHub repositories, LinkedIn profiles, and live sprint activities.
+
+### 3. Engineering Journey & Interactive 2D Canvas Simulations
+A four-stage evolution roadmap featuring real-time interactive HTML5 Canvas visualizers demonstrating DOM hierarchy, WebSocket packet transmission, token streaming, and ATS parsing algorithms.
+
+### 4. Deep-Dive Case Studies & Feature Showcase
+Editorial project presentations highlighting problem statements, algorithmic solutions, key capabilities, and direct links to live App Store deployments.
+
+### 5. Decoupled Distributed Architecture Flows
+Interactive multi-tier architecture diagrams illustrating client presentation layers, edge gateways, authentication boundaries, and backend microservices.
+
+### 6. 360° Cylindrical Capabilities Deck
+A trigonometric 3D orbital cylinder displaying core engineering competencies, featuring continuous auto-rotation, Gaussian depth-blur falloff, and touch/wheel drag navigation.
+
+### 7. Cosmic Monolith Message Beacon & Flight Sequencer
+A glassmorphic transmission transponder equipped with dynamic input signal integrity scoring and an edge-delivered rocket launch sequence connecting to the Resend API.
 
 ---
 
-## 🚀 Getting Started
+## 🛠️ Technology Stack
 
-### Prerequisites
-- Node.js (v16+ recommended)
-- npm or yarn
-
-### Installation
-```bash
-# Clone the repository
-git clone https://github.com/vishal-rao28/Portfolio2021-main.git
-
-# Navigate to project directory
-cd Portfolio2021-main
-
-# Install dependencies
-npm install
-
-# Start development server
-npm start
-```
-
-The application will be served at `http://localhost:3000`.
-
-### Production Build
-```bash
-npm run build
-```
+| Domain | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Frontend Framework** | **React 19.2** | Concurrent rendering, declarative component tree |
+| **Build Tooling** | **Vite 8.0 (Rolldown)** | Sub-second HMR, optimized manual chunk splitting |
+| **Edge Infrastructure** | **Cloudflare Workers** | Edge CDN, single-page routing & serverless endpoints |
+| **3D & Shaders** | **Three.js (r184)** | Custom GLSL raymarching, volumetric post-processing |
+| **Motion & Dynamics** | **GSAP 3.15 + Observer** | Staggered reveals, laser wipes, and route transitions |
+| **Smooth Scrolling** | **Lenis 1.3** | Hardware-accelerated virtual momentum scrolling |
+| **Typography & Icons** | **Inter & Space Mono** | High-contrast editorial typography, custom inline SVGs |
+| **Email Gateway** | **Resend API** | Reliable edge email delivery with HTML templating |
 
 ---
 
 ## 📬 Connect with Vishal Rao M
 
 - **Email:** [vishalrao5432@gmail.com](mailto:vishalrao5432@gmail.com)
-- **Phone / WhatsApp:** [+91 63821 90388](tel:+916382190388)
-- **LinkedIn:** [linkedin.com/in/vishal-rao-173a232b9](https://linkedin.com/in/vishal-rao-173a232b9)
+- **Phone / WhatsApp:** [+91 63821 90388](https://wa.me/916382190388)
+- **LinkedIn:** [linkedin.com/in/vishal-rao-173a232b9](https://www.linkedin.com/in/vishal-rao-173a232b9)
 - **GitHub:** [github.com/vishal-rao28](https://github.com/vishal-rao28)
-- **Instagram:** [@_v.i.s.h.uuu_28](https://www.instagram.com/_v.i.s.h.uuu_28/)
-- **Resume:** [Download Official Technical Dossier (PDF)](./public/Vishal_Rao_UDI.pdf)
+- **Resume:** [Official Technical Dossier (PDF)](./public/Vishal_Rao_Resume.pdf)
 
 ---
 
-*Crafted with React, Apple HIG paradigms, and liquid glass architecture by Vishal Rao M.*
+*Crafted with React, Three.js WebGL, Apple HIG paradigms, and GSAP by Vishal Rao M.*
