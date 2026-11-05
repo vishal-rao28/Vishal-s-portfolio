@@ -34,10 +34,6 @@ A high-performance, creative agency-grade developer portfolio architected with *
 - **Tech:** Swift, SwiftUI, PhotosUI, Core Data, UserNotifications, Combine
 - **Impact:** Visual photographic milestone companion capturing high-resolution treatment progress across customized calendar timeframes.
 
-### 6. School Bus Child Tracker · Safety & Location Telemetry
-- **Tech:** Swift, MapKit, Core Location, Firebase Realtime DB, Geofencing
-- **Impact:** Dual-app safety ecosystem providing live coordinate streaming, dynamic ETA calculation, and instant geofence arrival notifications for parents and drivers.
-
 ---
 
 ## 🌟 Interface Highlights & Capabilities

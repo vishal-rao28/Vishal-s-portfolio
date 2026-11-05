@@ -393,71 +393,6 @@ export default function Work() {
         githubUrl: 'https://github.com/vishal-rao28',
         liveDemoUrl: 'https://apps.apple.com/in/app/hairjourneytracker/id6760697820',
         exploreUrl: 'https://apps.apple.com/in/app/hairjourneytracker/id6760697820'
-      },
-      {
-        id: 'bustracker',
-        title: 'School Bus Child Tracker',
-        shortTitle: 'Bus Tracker',
-        category: 'iOS · Safety & Location · Dual App',
-        status: '● Production Verified',
-        isLive: false,
-        appStoreUrl: 'https://github.com/vishal-rao28',
-        iconImg: vianaIcon,
-        accentColor: '#f59e0b',
-        meta: {
-          ratings: '4.9',
-          ratingsCount: 'Fleet Verified',
-          stars: '★★★★★',
-          age: '4+',
-          ageUnit: 'Years',
-          category: 'Navigation',
-          categorySub: 'Dual App',
-          developer: 'Vishal Rao M',
-          developerSub: 'Lead Engineer',
-          language: 'EN',
-          languageSub: 'English',
-          size: '19.4',
-          sizeUnit: 'MB',
-          compatibility: 'iPhone, iPad'
-        },
-        screens: [
-          { id: 'sb1', num: '01', title: 'Live Fleet Apple Maps', subtitle: 'Real-Time Bus GPS Telemetry', tag: 'Live Telemetry', image: vianaScreen1, desc: 'Real-time student transit map with smoothly interpolated vehicle annotations, transit speed indicators, and dynamic arrival estimations.' },
-          { id: 'sb2', num: '02', title: 'Geofence Perimeter Boundary', subtitle: 'Automated Stop Alerts', tag: 'Core Location', image: vianaScreen2, desc: 'Sub-meter CoreLocation geofencing triggering automated arrival notifications when vehicles cross pickup boundary perimeters.' },
-          { id: 'sb3', num: '03', title: 'Boarding Attendance Ledger', subtitle: 'Electronic Student Check-In', tag: 'Attendance', image: vianaScreen3, desc: 'Driver boarding interface recording instant student RFID/QR check-in with synchronized parental confirmation notifications.' }
-        ],
-        description:
-          'Dual-application safety ecosystem composed of dedicated Parent and Bus Driver applications featuring sub-meter GPS location streaming on Apple Maps, automated geofence arrival alerts, and digital student boarding verification.',
-        problem:
-          'Parents face daily uncertainty regarding bus delays or route changes, while paper-based student attendance records on school transport are prone to human error.',
-        solution:
-          'Constructed a synchronized dual-app ecosystem with MapKit and Firebase Realtime Database delivering live coordinate streaming, dynamic ETA calculation, and instant geofence arrival notifications.',
-        techStack: ['Swift', 'MapKit', 'Core Location', 'Firebase Realtime DB', 'Geofencing'],
-        features: [
-          'Live moving bus coordinate telemetry',
-          'Sub-meter Core Location accuracy',
-          'Automated stop perimeter arrival alerts',
-          'Dual Parent & Driver synced interfaces'
-        ],
-        architectureFlow: [
-          { step: '01', title: 'Driver Telemetry', tech: 'Core Location Engine', desc: 'High-frequency GPS updates along transit routes' },
-          { step: '02', title: 'Real-Time Broker', tech: 'Firebase Realtime DB', desc: 'Sub-second WebSocket sync between vehicles & parents' },
-          { step: '03', title: 'Geofence Boundary', tech: 'CLCircularRegion', desc: 'Instant trigger when bus enters student pickup zone' },
-          { step: '04', title: 'Parent Client', tech: 'MapKit Dynamic Annotation', desc: 'Smoothly interpolated bus icon movement' },
-        ],
-        architectureDetails: [
-          { title: 'Coordinate Interpolation', desc: 'Implemented Catmull-Rom spline interpolation to smoothly animate vehicle markers between discrete GPS packet updates.' },
-          { title: 'Adaptive Power Management', desc: 'Dynamic GPS polling frequencies scale with vehicle velocity, saving 45% driver device battery.' },
-        ],
-        metrics: [
-          { label: 'GPS Refresh Rate', value: '1.0s Interval' },
-          { label: 'Geofence Radius', value: '50m Accuracy' },
-          { label: 'Architecture', value: 'Dual-App Sync' },
-          { label: 'Reliability', value: '99.98% Socket Uptime' },
-        ],
-        images: [vianaScreen1, vianaScreen2, vianaScreen3],
-        githubUrl: 'https://github.com/vishal-rao28',
-        liveDemoUrl: 'https://github.com/vishal-rao28',
-        exploreUrl: 'https://github.com/vishal-rao28'
       }
     ],
     []
@@ -828,57 +763,10 @@ export default function Work() {
             </div>
           </div>
         </div>
-
-        {/* ------------------------------------------------------------------
-            2. OUTER APP IMAGES (HORIZONTAL PANORAMIC SCREENS GALLERY)
-            ------------------------------------------------------------------ */}
-        <div className="outer-screens-section font-mono">
-          <div className="outer-screens-header">
-            <span className="outer-screens-title">
-              Outer App Production Screens ({currentScreens.length} Screens Suite)
-            </span>
-            <span className="outer-screens-hint">
-              Click any outer screen to load inside device ➔
-            </span>
-          </div>
-
-          <div className="outer-screens-strip">
-            {currentScreens.map((screen, idx) => {
-              const isSelected = idx === activeScreenIndex;
-              return (
-                <div
-                  key={screen.id}
-                  className={`outer-thumb-card hoverable ${isSelected ? 'active' : ''}`}
-                  onClick={() => setActiveScreenIndex(idx)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') setActiveScreenIndex(idx);
-                  }}
-                  aria-label={`Preview screen: ${screen.title}`}
-                >
-                  <div className="outer-thumb-device">
-                    <img
-                      src={screen.image}
-                      alt={screen.title}
-                      className="outer-thumb-img"
-                      loading="lazy"
-                    />
-                  </div>
-
-                  <div className="outer-thumb-caption font-mono">
-                    <span className="outer-thumb-tag">{screen.num} · {screen.tag}</span>
-                    <span className="outer-thumb-title">{screen.title}</span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
       </div>
 
       {/* --------------------------------------------------------------------
-          3. ALL FEATURED PROJECTS CARDS GRID (WITH MINI DEVICE FRAMES)
+          2. ALL FEATURED PROJECTS CARDS GRID (WITH MINI DEVICE FRAMES)
           -------------------------------------------------------------------- */}
       <div className="gsap-reveal" style={{ marginBottom: '2rem' }}>
         <h3 className="section-title uppercase text-glow" style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>

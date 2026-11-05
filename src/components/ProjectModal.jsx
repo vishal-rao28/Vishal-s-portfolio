@@ -172,37 +172,89 @@ export default function ProjectModal({ open, onClose, project }) {
         {activeTab === 'overview' && (
           <div className="project-modal-body" data-lenis-prevent="true">
             <div className="project-modal-gallery">
-              <div className="project-modal-gallery-main">
-                <img
-                  ref={galleryRef}
-                  src={activeImage}
-                  alt={`${project.title} screenshot ${activeIndex + 1}`}
-                  className="project-modal-image"
-                />
-                {images.length > 1 ? (
+              <div className="modal-gallery-stage">
+                {/* Authentic Apple iPhone Hardware Chassis */}
+                <div className="modal-iphone-chassis">
+                  {/* Physical Hardware Buttons */}
+                  <div className="modal-iphone-btn-action" title="Action Button" />
+                  <div className="modal-iphone-btn-vol-up" title="Volume Up" />
+                  <div className="modal-iphone-btn-vol-down" title="Volume Down" />
+                  <div className="modal-iphone-btn-power" title="Side Power Button" />
+                  <div className="modal-iphone-btn-camera" title="Camera Control" />
+
+                  {/* Super Retina XDR Screen */}
+                  <div className="modal-iphone-screen">
+                    {/* Glossy Glass Reflection */}
+                    <div className="modal-iphone-glare" />
+
+                    {/* Dynamic Island */}
+                    <div className="modal-iphone-dynamic-island">
+                      <span className="modal-island-cam" />
+                      <span className="modal-island-sensor" />
+                    </div>
+
+                    {/* Active Screenshot Screen Image */}
+                    <div className="modal-iphone-img-wrap">
+                      <img
+                        ref={galleryRef}
+                        src={activeImage}
+                        alt={`${project.title} screenshot ${activeIndex + 1}`}
+                        className="modal-iphone-img"
+                      />
+                    </div>
+
+                    {/* iOS Home Indicator Bar */}
+                    <div className="modal-iphone-home-indicator" />
+                  </div>
+                </div>
+
+                {/* Left & Right Navigation Arrows */}
+                {images.length > 1 && (
                   <>
                     <button
-                      className="project-modal-nav-btn hoverable"
+                      className="modal-gallery-nav-btn nav-prev hoverable"
                       onClick={onPrev}
                       disabled={activeIndex === 0}
                       type="button"
-                      aria-label="Previous image"
+                      aria-label="Previous screenshot"
                     >
                       ‹
                     </button>
                     <button
-                      className="project-modal-nav-btn hoverable"
+                      className="modal-gallery-nav-btn nav-next hoverable"
                       onClick={onNext}
                       disabled={activeIndex === images.length - 1}
                       type="button"
-                      aria-label="Next image"
+                      aria-label="Next screenshot"
                     >
                       ›
                     </button>
                   </>
-                ) : null}
+                )}
               </div>
 
+              {/* Counter / Telemetry Indicator */}
+              {images.length > 1 && (
+                <div className="modal-gallery-counter-bar font-mono">
+                  <span className="modal-gallery-counter-tag">
+                    SCREEN {String(activeIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
+                  </span>
+                  <div className="modal-gallery-dots">
+                    {images.map((_, idx) => (
+                      <span
+                        key={idx}
+                        className={`modal-gallery-dot ${idx === activeIndex ? 'active' : ''}`}
+                        onClick={() => setActiveIndex(idx)}
+                        role="button"
+                        tabIndex={0}
+                        aria-label={`Jump to screen ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Thumbs Gallery */}
               {images.length > 1 ? (
                 <div className="project-modal-thumbs">
                   {images.map((src, idx) => (
