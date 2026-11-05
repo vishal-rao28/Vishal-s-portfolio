@@ -142,6 +142,78 @@ nav.dock-mode .nav-inner {
     gap: 0.5rem;
     color: #fff;
     font-size: inherit;
+    transition: color 0.3s ease;
+  }
+
+  .sound-btn-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .sound-text {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  .sound-btn.active-audio {
+    color: #60a5fa;
+  }
+
+  .audio-equalizer {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 2.5px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .eq-bar {
+    width: 2.5px;
+    background: #60a5fa;
+    border-radius: 2px;
+    box-shadow: 0 0 8px #60a5fa;
+  }
+
+  .eq-bar.b1 {
+    height: 35%;
+    animation: eqPulse1 0.75s infinite alternate ease-in-out;
+  }
+
+  .eq-bar.b2 {
+    height: 85%;
+    animation: eqPulse2 0.55s infinite alternate ease-in-out;
+  }
+
+  .eq-bar.b3 {
+    height: 55%;
+    animation: eqPulse3 0.85s infinite alternate ease-in-out;
+  }
+
+  @keyframes eqPulse1 {
+    0% { height: 20%; }
+    100% { height: 95%; }
+  }
+
+  @keyframes eqPulse2 {
+    0% { height: 90%; }
+    100% { height: 30%; }
+  }
+
+  @keyframes eqPulse3 {
+    0% { height: 45%; }
+    100% { height: 100%; }
+  }
+
+  body.light-theme .sound-btn.active-audio,
+  [data-theme='light'] .sound-btn.active-audio {
+    color: #0071e3;
+  }
+
+  body.light-theme .eq-bar,
+  [data-theme='light'] .eq-bar {
+    background: #0071e3;
+    box-shadow: 0 0 6px rgba(0, 113, 227, 0.45);
   }
 
   .desktop-resume-link {
