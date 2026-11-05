@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="social-links uppercase">
           <ScrambleLink href="https://github.com/vishal-rao28" className="hoverable" target="_blank" rel="noopener noreferrer">Github</ScrambleLink>
           <ScrambleLink href="https://www.linkedin.com/in/vishal-rao-173a232b9" className="hoverable" target="_blank" rel="noopener noreferrer">LinkedIn</ScrambleLink>
-          <ScrambleLink href="https://www.instagram.com/_v.i.s.h.uuu_28/" className="hoverable" target="_blank" rel="noopener noreferrer">Instagram</ScrambleLink>
+          <ScrambleLink href="https://www.instagram.com/_f.r.e.a.k.y.vr_/" className="hoverable" target="_blank" rel="noopener noreferrer">Instagram</ScrambleLink>
           <ScrambleLink href="https://wa.me/916382190388" className="hoverable" target="_blank" rel="noopener noreferrer">WhatsApp</ScrambleLink>
         </div>
       </div>

@@ -101,15 +101,15 @@ export default function EngineeringTelemetry() {
             </a>
 
             <a
-              href="https://wa.me/916382190388?text=Hi%20Vishal,%20saw%20your%20portfolio%20and%20wanted%20to%20connect!"
+              href="https://github.com/vishal-rao28"
               target="_blank"
               rel="noopener noreferrer"
-              className="telemetry-btn telemetry-btn-ping hoverable"
+              className="telemetry-btn hoverable"
               onMouseEnter={playHoverSound}
               onClick={playClickSound}
             >
-              <span>Chat on WhatsApp</span>
-              <span className="telemetry-arrow">💬</span>
+              <span>Explore GitHub Repos</span>
+              <span className="telemetry-arrow">↗</span>
             </a>
           </div>
         </div>

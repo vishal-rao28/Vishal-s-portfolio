@@ -668,6 +668,12 @@
   width: 100%;
 }
 
+.contact-channels-grid.dual-channels {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
 .channel-card {
   position: relative;
   background: rgba(14, 14, 22, 0.72);
