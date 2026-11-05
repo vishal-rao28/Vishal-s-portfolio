@@ -64,13 +64,19 @@ export default function ThreeStarfield({ isHeroPage = false }) {
     const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 2000);
     camera.position.z = 1000; // Looking down the -Z axis
 
-    const renderer = new THREE.WebGLRenderer({
-      canvas,
-      alpha: true,
-      antialias: true
-    });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        canvas,
+        alpha: true,
+        antialias: true
+      });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    } catch (e) {
+      console.warn('WebGL not available for ThreeStarfield:', e);
+      return;
+    }
 
     // 1. Create 3D Static/Twinkling Stars (GPU Accelerated)
     const starCount = 5000;

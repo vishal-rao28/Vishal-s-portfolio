@@ -242,9 +242,13 @@ export default {
       }
     }
 
-    // 3. Static Assets fallback (Serves the React portfolio frontend)
+    // 3. Static Assets fallback (Serves the React portfolio frontend with SPA fallback)
     if (env.ASSETS) {
-      return env.ASSETS.fetch(request);
+      let res = await env.ASSETS.fetch(request);
+      if (res.status === 404 && request.method === 'GET' && !url.pathname.includes('.')) {
+        res = await env.ASSETS.fetch(new URL('/', request.url));
+      }
+      return res;
     }
 
     return new Response('Not found', { status: 404 });
