@@ -38,14 +38,6 @@ const categories = [
   },
   {
     id: '05',
-    tag: 'CLOUD ARCHITECTURE & APPLIED AI',
-    title: 'AWS Cloud & AI/Data Science',
-    summary: 'Certified AWS Cloud Computing Architect, B.Tech in Artificial Intelligence & Data Science, and published iOS research author in the International Journal (IJRPR).',
-    telemetry: 'AWS Certified • B.Tech AI & DS • IJRPR Published',
-    skills: ['AWS Cloud Architecture', 'AI & Data Science', 'IJRPR Published Research', 'Deep Learning & Neural Nets', 'Core ML & Vision', 'Enterprise ERP Systems']
-  },
-  {
-    id: '06',
     tag: 'ENGINEERING LEADERSHIP',
     title: 'Technical Training & App Store Release',
     summary: 'Mentoring aspiring engineers at SIMATS in Swift, SwiftUI architecture, debugging, and interview readiness, leading code reviews, and steering App Store reviews.',

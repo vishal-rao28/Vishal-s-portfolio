@@ -29,7 +29,7 @@ export default function EngineeringTelemetry() {
           </p>
           <div className="telemetry-meta-row text-gray">
             <span>CORE STACK:</span>
-            <span className="meta-highlight">Swift, SwiftUI, UIKit, Core Location, MapKit, Firebase, Appium, Selenium, AWS</span>
+            <span className="meta-highlight">Swift, SwiftUI, UIKit, Core Location, MapKit, Firebase, Appium, Selenium</span>
           </div>
         </div>
 
