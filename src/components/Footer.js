@@ -1,118 +1,270 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function Footer() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText('vishalrao5432@gmail.com');
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
   return (
     <footer id="socials" style={{ paddingTop: '80px', paddingBottom: '50px' }}>
-      {/* Contact Glass Card */}
+      {/* Top Header Badge & Tagline */}
+      <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+        <span
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '6px 16px',
+            borderRadius: '24px',
+            backgroundColor: 'rgba(48, 209, 88, 0.12)',
+            color: '#30D158',
+            fontSize: '0.82rem',
+            fontWeight: 700,
+            letterSpacing: '0.04em',
+            border: '1px solid rgba(48, 209, 88, 0.3)',
+            marginBottom: '14px'
+          }}
+        >
+          <span className="status-beacon" />
+          ● ACTIVE DISPATCH · READY FOR NEW OPPORTUNITIES
+        </span>
+        <h2
+          style={{
+            fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
+            fontWeight: 800,
+            margin: '0 0 10px 0',
+            color: 'var(--text-primary)',
+            letterSpacing: '-0.02em',
+            lineHeight: 1.15
+          }}
+        >
+          Let's Engineer <span className="gradient-text-blue">Something Iconic</span>.
+        </h2>
+        <p
+          style={{
+            fontSize: '1.02rem',
+            color: 'var(--text-secondary)',
+            maxWidth: '620px',
+            margin: '0 auto',
+            lineHeight: 1.6
+          }}
+        >
+          Available for high-impact native iOS engineering, on-device Core ML vision architectures, and industrial automated testing pipelines.
+        </p>
+      </div>
+
+      {/* Main Glass Console (Left Side Frame Only, in Horizontal Layout) */}
       <div
         className="glass-card"
         style={{
-          padding: '48px 36px',
-          textAlign: 'center',
-          marginBottom: '50px',
-          background: 'radial-gradient(circle at 50% 0%, rgba(10, 132, 255, 0.15) 0%, rgba(255, 255, 255, 0.02) 70%)',
-          border: '1px solid rgba(255, 255, 255, 0.1)'
+          padding: '32px 32px 36px 32px',
+          borderRadius: '24px',
+          marginBottom: '50px'
         }}
       >
-        <span className="status-pill" style={{ marginBottom: '18px' }}>
-          <span className="status-beacon" />
-          Ready for New Opportunities
-        </span>
+        {/* Frame Header */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '22px', flexWrap: 'wrap', gap: '10px' }}>
+          <span style={{ fontSize: '0.8rem', color: 'var(--apple-cyan, #0284c7)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
+            Direct Engineering Ingestion
+          </span>
+          <span style={{ fontSize: '0.76rem', color: '#30D158', fontWeight: 600 }}>
+            ● Encrypted &amp; Direct
+          </span>
+        </div>
 
-        <h2
-          style={{
-            fontSize: 'clamp(2rem, 4vw, 2.8rem)',
-            fontWeight: 800,
-            marginBottom: '16px',
-            color: '#ffffff'
-          }}
-        >
-          Let's Build Something <span className="gradient-text-blue">Exceptional</span>.
-        </h2>
-
-        <p
-          style={{
-            fontSize: '1.05rem',
-            color: 'var(--text-secondary)',
-            maxWidth: '560px',
-            margin: '0 auto 36px auto',
-            lineHeight: 1.65
-          }}
-        >
-          Whether you need an iOS Engineer to architect a production SwiftUI app, optimize Core ML vision models, or establish industrial automated testing — I'd love to connect.
-        </p>
-
-        {/* Contact Action Buttons */}
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: '14px',
-            alignItems: 'center'
-          }}
-        >
-          {/* Email button */}
-          <a href="mailto:vishalrao5432@gmail.com">
-            <button className="btn-primary">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-              <span>Email Vishal</span>
-            </button>
-          </a>
-
-          {/* Copy email quick button */}
-          <button
-            onClick={handleCopyEmail}
-            className="btn-secondary"
-            style={{
-              borderColor: copied ? '#30D158' : 'var(--border-subtle)',
-              color: copied ? '#30D158' : 'var(--text-primary)'
-            }}
+        {/* 4 Interactive Channels in Horizontal Layout */}
+        <div className="contact-horizontal-grid">
+          {/* Tile 1: Mail Vishal via Gmail */}
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=vishalrao5432@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: 'none' }}
           >
-            {copied ? (
-              <>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>Copied to Clipboard!</span>
-              </>
-            ) : (
-              <>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
-                <span>Copy Email</span>
-              </>
-            )}
-          </button>
-
-          {/* Phone button */}
-          <a href="tel:+916382190388">
-            <button className="btn-secondary">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-              </svg>
-              <span>+91 63821 90388</span>
-            </button>
+            <div
+              style={{
+                borderRadius: '16px',
+                padding: '20px 18px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '14px',
+                transition: 'all 0.25s ease',
+                cursor: 'pointer',
+                height: '100%',
+                boxSizing: 'border-box'
+              }}
+              onMouseEnter={(e) => {
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.borderColor = '#0A84FF';
+                e.currentTarget.style.boxShadow = isLight 
+                  ? '0 0 0 1px rgba(0, 113, 227, 0.4), inset 0 2px 2px #ffffff, 0 20px 45px -6px rgba(0, 113, 227, 0.25)' 
+                  : '0 0 0 1px rgba(10, 132, 255, 0.45), inset 0 2px 3px 0 rgba(255, 255, 255, 0.45), 0 20px 48px -6px rgba(10, 132, 255, 0.35)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = '';
+                e.currentTarget.style.borderColor = '';
+                e.currentTarget.style.boxShadow = '';
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div
+                  className="contact-channel-icon-pod pod-mail"
+                  style={{
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: '12px',
+                    backgroundColor: 'rgba(10, 132, 255, 0.15)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'var(--apple-blue)',
+                    border: '1px solid rgba(10, 132, 255, 0.3)'
+                  }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.272H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L12 9.49l8.073-5.997c1.618-1.214 3.927-.059 3.927 1.964z"/>
+                  </svg>
+                </div>
+                <span style={{ fontSize: '0.72rem', color: 'var(--apple-cyan, #0284c7)', fontWeight: 700 }}>Open Gmail ↗</span>
+              </div>
+              <div>
+                <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700 }}>
+                  Direct Inbox
+                </div>
+                <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-primary)', marginTop: 3 }}>
+                  Mail Vishal
+                </div>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: 3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  vishalrao5432@gmail.com
+                </div>
+              </div>
+            </div>
           </a>
 
-          {/* Resume link */}
-          <a href="./Vishal_Rao_UDI.pdf" target="_blank" rel="noopener noreferrer">
-            <button className="btn-secondary">
-              <span>Download Resume ↗</span>
-            </button>
+          {/* Tile 2: Direct Phone & WhatsApp */}
+          <a href="tel:+916382190388" style={{ textDecoration: 'none' }}>
+            <div
+              style={{
+                borderRadius: '16px',
+                padding: '20px 18px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '14px',
+                transition: 'all 0.25s ease',
+                cursor: 'pointer',
+                height: '100%',
+                boxSizing: 'border-box'
+              }}
+              onMouseEnter={(e) => {
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.borderColor = '#FF9F0A';
+                e.currentTarget.style.boxShadow = isLight 
+                  ? '0 0 0 1px rgba(217, 119, 6, 0.4), inset 0 2px 2px #ffffff, 0 20px 45px -6px rgba(217, 119, 6, 0.25)' 
+                  : '0 0 0 1px rgba(255, 159, 10, 0.45), inset 0 2px 3px 0 rgba(255, 255, 255, 0.45), 0 20px 48px -6px rgba(255, 159, 10, 0.35)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = '';
+                e.currentTarget.style.borderColor = '';
+                e.currentTarget.style.boxShadow = '';
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div
+                  className="contact-channel-icon-pod pod-phone"
+                  style={{
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: '12px',
+                    backgroundColor: 'rgba(255, 159, 10, 0.15)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#FF9F0A',
+                    border: '1px solid rgba(255, 159, 10, 0.3)'
+                  }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <span style={{ fontSize: '0.72rem', color: 'var(--apple-amber)', fontWeight: 700 }}>Direct Call ↗</span>
+              </div>
+              <div>
+                <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700 }}>
+                  Cellular &amp; WhatsApp
+                </div>
+                <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-primary)', marginTop: 3 }}>
+                  +91 63821 90388
+                </div>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: 3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  Voice, SMS &amp; Instant Messaging
+                </div>
+              </div>
+            </div>
+          </a>
+
+          {/* Tile 3: Verified Executive Resume */}
+          <a href="./Vishal_Rao_UDI.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            <div
+              style={{
+                borderRadius: '16px',
+                padding: '20px 18px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '14px',
+                transition: 'all 0.25s ease',
+                cursor: 'pointer',
+                height: '100%',
+                boxSizing: 'border-box'
+              }}
+              onMouseEnter={(e) => {
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.borderColor = '#BF5AF2';
+                e.currentTarget.style.boxShadow = isLight 
+                  ? '0 0 0 1px rgba(147, 51, 234, 0.4), inset 0 2px 2px #ffffff, 0 20px 45px -6px rgba(147, 51, 234, 0.25)' 
+                  : '0 0 0 1px rgba(191, 90, 242, 0.45), inset 0 2px 3px 0 rgba(255, 255, 255, 0.45), 0 20px 48px -6px rgba(191, 90, 242, 0.35)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = '';
+                e.currentTarget.style.borderColor = '';
+                e.currentTarget.style.boxShadow = '';
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div
+                  className="contact-channel-icon-pod pod-resume"
+                  style={{
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: '12px',
+                    backgroundColor: 'rgba(191, 90, 242, 0.15)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#BF5AF2',
+                    border: '1px solid rgba(191, 90, 242, 0.3)'
+                  }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                  </svg>
+                </div>
+                <span style={{ fontSize: '0.72rem', color: 'var(--apple-purple)', fontWeight: 700 }}>PDF Dossier ↗</span>
+              </div>
+              <div>
+                <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700 }}>
+                  Official Credentials
+                </div>
+                <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-primary)', marginTop: 3 }}>
+                  Download Resume
+                </div>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: 3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  Verified Technical Dossier
+                </div>
+              </div>
+            </div>
           </a>
         </div>
       </div>
@@ -126,12 +278,12 @@ function Footer() {
           flexWrap: 'wrap',
           gap: '20px',
           paddingTop: '20px',
-          borderTop: '1px solid rgba(255, 255, 255, 0.06)'
+          borderTop: '1px solid var(--border-subtle)'
         }}
       >
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ fontSize: '1.15rem', fontWeight: 700, color: '#ffffff' }}>Vishal Rao M</span>
+            <span style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-primary)' }}>Vishal Rao M</span>
             <span style={{ color: '#0A84FF', fontWeight: 800 }}>·</span>
             <span style={{ fontSize: '0.86rem', color: 'var(--text-muted)' }}>iOS Developer &amp; Technical Engineer</span>
           </div>
@@ -148,16 +300,18 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             title="LinkedIn Profile"
+            className="footer-social-icon-btn linkedin"
             style={{
               width: 40,
               height: 40,
               borderRadius: 10,
-              backgroundColor: 'rgba(255, 255, 255, 0.05)',
+              backgroundColor: 'var(--bg-card)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#ffffff',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
+              color: 'var(--text-primary)',
+              border: '1px solid var(--border-subtle)',
+              boxShadow: '0 2px 6px rgba(0, 0, 0, 0.04)',
               transition: 'all 0.2s ease'
             }}
             onMouseEnter={(e) => {
@@ -166,8 +320,8 @@ function Footer() {
               e.currentTarget.style.transform = 'translateY(-2px)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+              e.currentTarget.style.backgroundColor = 'var(--bg-card)';
+              e.currentTarget.style.borderColor = 'var(--border-subtle)';
               e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
@@ -182,16 +336,18 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             title="GitHub Profile"
+            className="footer-social-icon-btn github"
             style={{
               width: 40,
               height: 40,
               borderRadius: 10,
-              backgroundColor: 'rgba(255, 255, 255, 0.05)',
+              backgroundColor: 'var(--bg-card)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#ffffff',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
+              color: 'var(--text-primary)',
+              border: '1px solid var(--border-subtle)',
+              boxShadow: '0 2px 6px rgba(0, 0, 0, 0.04)',
               transition: 'all 0.2s ease'
             }}
             onMouseEnter={(e) => {
@@ -200,8 +356,8 @@ function Footer() {
               e.currentTarget.style.transform = 'translateY(-2px)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+              e.currentTarget.style.backgroundColor = 'var(--bg-card)';
+              e.currentTarget.style.borderColor = 'var(--border-subtle)';
               e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
@@ -210,42 +366,87 @@ function Footer() {
             </svg>
           </a>
 
-          {/* Email */}
+          {/* Email (Opens Gmail) */}
           <a
-            href="mailto:vishalrao5432@gmail.com"
-            title="Send Email"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=vishalrao5432@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Open Gmail (vishalrao5432@gmail.com)"
+            className="footer-social-icon-btn email"
             style={{
               width: 40,
               height: 40,
               borderRadius: 10,
-              backgroundColor: 'rgba(255, 255, 255, 0.05)',
+              backgroundColor: 'var(--bg-card)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#ffffff',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
+              color: 'var(--text-primary)',
+              border: '1px solid var(--border-subtle)',
+              boxShadow: '0 2px 6px rgba(0, 0, 0, 0.04)',
               transition: 'all 0.2s ease'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#FF9F0A';
-              e.currentTarget.style.borderColor = '#FF9F0A';
+              e.currentTarget.style.backgroundColor = '#EA4335';
+              e.currentTarget.style.borderColor = '#EA4335';
+              e.currentTarget.style.color = '#ffffff';
               e.currentTarget.style.transform = 'translateY(-2px)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+              e.currentTarget.style.backgroundColor = 'var(--bg-card)';
+              e.currentTarget.style.borderColor = 'var(--border-subtle)';
+              e.currentTarget.style.color = 'var(--text-primary)';
               e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.272H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L12 9.49l8.073-5.997c1.618-1.214 3.927-.059 3.927 1.964z"/>
             </svg>
           </a>
-        </div>
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/_v.i.s.h.uuu_28/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Instagram Profile (@_v.i.s.h.uuu_28)"
+            className="footer-social-icon-btn instagram"
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 10,
+              backgroundColor: 'var(--bg-card)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'var(--text-primary)',
+              border: '1px solid var(--border-subtle)',
+              boxShadow: '0 2px 6px rgba(0, 0, 0, 0.04)',
+              transition: 'all 0.2s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#E1306C';
+              e.currentTarget.style.borderColor = '#E1306C';
+              e.currentTarget.style.color = '#ffffff';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 6px 18px rgba(225, 48, 108, 0.4)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--bg-card)';
+              e.currentTarget.style.borderColor = 'var(--border-subtle)';
+              e.currentTarget.style.color = 'var(--text-primary)';
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
       </div>
-    </footer>
-  );
+    </div>
+  </footer>
+);
 }
 
 export default Footer;

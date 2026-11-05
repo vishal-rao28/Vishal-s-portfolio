@@ -1,70 +1,93 @@
- # Getting Started with Create React App
+# Vishal Rao M — iOS Developer & Technical Engineer
 
-This project  was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> **Apple Native Engineering · SwiftUI & UIKit Architecture · On-Device Core ML · Industrial Automated QA**
 
-## Available Scripts
+A high-performance personal portfolio showcasing genuine production native iOS applications shipped live to the Apple App Store, interactive Apple hardware device studios, system architecture flows, and cross-discipline QA verification pipelines.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+##  Featured Production iOS Applications
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 1. [Viana 360](https://apps.apple.com/in/app/viana-360/id6760163659) · Live on App Store
+- **Role:** Lead iOS Engineer (Viana Soft / SIMATS)
+- **Tech:** Swift, SwiftUI, UIKit, Combine Reactive State, MapKit GPS Telemetry, Core Data, RESTful APIs, APNs Push
+- **Impact:** Comprehensive enterprise mobile platform for Saveetha Institute of Medical and Technical Sciences (SIMATS). Streamlines everyday workforce management, GPS-geofenced biometric attendance clock-ins, instant leave submissions, and institutional communications.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 2. Smart Ulcer Predictor · Clinical On-Device AI
+- **Tech:** Swift, SwiftUI, Core ML, Vision Framework, Convolutional Neural Networks, Apple Neural Engine (ANE)
+- **Impact:** Clinical decision-support mobile application employing quantized deep learning computer vision on-device to evaluate skin ulcer imagery (Granulation, Slough, Necrotic, Epithelialisation) with sub-second inference and zero cloud latency.
 
-### `npm test`
+### 3. BreathTrack · MedTech Telehealth Platform
+- **Tech:** Swift, SwiftUI, Apple HealthKit, Combine, REST APIs, Swift Charts
+- **Impact:** Chronic respiratory management application tracking SpO2, forced vital capacity (FVC), medication adherence, and clinician ABG diagnostic reviews.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 4. CoreCare · Digital Health & Wellness
+- **Tech:** Swift, SwiftUI, HealthKit, Core Data, PDFKit, Apple HIG Custom Controls
+- **Impact:** All-in-one cardiovascular wellness companion featuring real-time BPM telemetry, automated PDF clinical reporting, and offline-first persistence.
 
-### `npm run build`
+### 5. HairJourneyTracker · Health & Lifestyle
+- **Tech:** Swift, SwiftUI, PhotosUI, Core Data, UserNotifications
+- **Impact:** Visual photographic milestone companion capturing high-resolution treatment progress across customized calendar timeframes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Competency Matrix
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **iOS & Apple Ecosystem:** Swift (Expert), SwiftUI (Advanced), UIKit (Advanced), Combine (Advanced), Core Data, Core ML, Apple HealthKit, MapKit & CoreLocation, Swift Charts, Xcode & TestFlight.
+- **Automated QA & Security:** Appium (iOS & Android Automation), Selenium (Web Regressions), Postman (REST API Validation), Load Testing (Server Stress & Latency Benchmarks), Backend Vulnerability Risk Auditing, CI/CD Automated Verification Pipelines.
+- **AI, Machine Learning & Vision:** Vision Framework, Model Quantization (Apple Neural Engine), Deep Neural Networks (CNNs), Python, Data Science (Saveetha B.Tech AI & DS).
+- **Backend & Cloud Infrastructure:** RESTful APIs, Firebase, Git & GitHub CI/CD, AWS Cloud Architecture (Certified), Java, C/C++, Figma Apple HIG Design Specs.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 💻 Portfolio Architecture & UI Features
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Apple Liquid Pearl Glass System:** Custom CSS glassmorphism architecture rendered with specular reflections, crystalline bevels, and responsive sapphire sheens in both Dark Mode and Light Mode.
+- **Glossy Highlighted Icon Pods (Light Mode):** Jewel-like enamel icon pods featuring 3D convex glass bevels, specular top-glints, and chromatic colored glows.
+- **Interactive Apple iPhone Studio:** Panoramic multi-device suite presenting authentic edge-to-edge App Store production screens inside realistic Apple iPhone 18 Pro Max hardware frames.
+- **Gesture Theme Dock:** Floating interactive theme controller with spring drag physics for fluid switching between Dark Mode and Light Mode.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 🚀 Getting Started
 
-## Learn More
+### Prerequisites
+- Node.js (v16+ recommended)
+- npm or yarn
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/vishal-rao28/Portfolio2021-main.git
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Navigate to project directory
+cd Portfolio2021-main
 
-### Code Splitting
+# Install dependencies
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Start development server
+npm start
+```
 
-### Analyzing the Bundle Size
+The application will be served at `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Production Build
+```bash
+npm run build
+```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📬 Connect with Vishal Rao M
 
-### Advanced Configuration
+- **Email:** [vishalrao5432@gmail.com](mailto:vishalrao5432@gmail.com)
+- **Phone / WhatsApp:** [+91 63821 90388](tel:+916382190388)
+- **LinkedIn:** [linkedin.com/in/vishal-rao-173a232b9](https://linkedin.com/in/vishal-rao-173a232b9)
+- **GitHub:** [github.com/vishal-rao28](https://github.com/vishal-rao28)
+- **Instagram:** [@_v.i.s.h.uuu_28](https://www.instagram.com/_v.i.s.h.uuu_28/)
+- **Resume:** [Download Official Technical Dossier (PDF)](./public/Vishal_Rao_UDI.pdf)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*Crafted with React, Apple HIG paradigms, and liquid glass architecture by Vishal Rao M.*

@@ -12,7 +12,7 @@ function Experience() {
         'Serve as iOS Developer & Technical Trainer, blending hands-on native iOS engineering with developer mentorship.',
         'Architect and deploy production native iOS applications using Swift, SwiftUI, UIKit, and Core ML.',
         'Mentor developers in iOS architecture, debugging, App Store submission standards, and interview readiness.',
-        'Execute structured testing across four disciplines: Selenium (Web), Appium (Android & iOS), Backend Vulnerability, and Load Testing.',
+        'Execute structured testing across four automated quality verification gates: Selenium (Web), Appium (Android & iOS), Backend Vulnerability, and Load Testing.',
         'Partner cross-functionally with development and QA teams to benchmark latency, resolve defects, and ensure zero-crash releases.'
       ]
     },
@@ -20,10 +20,10 @@ function Experience() {
       period: 'Oct 2025 – Present',
       role: 'iOS Developer',
       organization: 'Viana Soft Private Limited (SIMATS)',
-      type: 'Fast-Track Promotion in 2 Months',
+      type: 'High-Velocity Rapid Development',
       accentColor: '#30D158',
       bullets: [
-        'Promoted from iOS Intern to Full-Time iOS Developer within 2 months in recognition of high delivery velocity.',
+        'Promoted from iOS Intern to Full-Time iOS Developer in recognition of rapid development and high delivery velocity.',
         'Spearheaded development of “Viana 360,” a cross-device institutional application built for iPhone and iPad on App Store.',
         'Engineered scalable responsive SwiftUI layouts with Combine reactive streams and real-time REST API telemetry.',
         'Led end-to-end testing of VBuy Food application across iOS devices, confirming functionality, UI consistency, and performance.',
@@ -102,11 +102,12 @@ function Experience() {
             >
               {/* Timeline indicator node */}
               <div
+                className="experience-timeline-node"
                 style={{
                   width: 42,
                   height: 42,
                   borderRadius: '50%',
-                  backgroundColor: '#090d16',
+                  backgroundColor: 'var(--bg-secondary)',
                   border: `2px solid ${exp.accentColor}`,
                   display: 'flex',
                   alignItems: 'center',
@@ -117,6 +118,7 @@ function Experience() {
                 }}
               >
                 <div
+                  className="timeline-node-core"
                   style={{
                     width: 14,
                     height: 14,
@@ -147,7 +149,7 @@ function Experience() {
                   }}
                 >
                   <div>
-                    <h3 style={{ fontSize: '1.35rem', margin: '0 0 4px 0', color: '#ffffff' }}>
+                    <h3 style={{ fontSize: '1.35rem', margin: '0 0 4px 0', color: 'var(--text-primary)' }}>
                       {exp.role}
                     </h3>
                     <h4 style={{ fontSize: '0.98rem', margin: 0, color: 'var(--text-secondary)', fontWeight: 500 }}>
@@ -207,3 +209,4 @@ function Experience() {
 }
 
 export default Experience;
+

@@ -20,8 +20,9 @@ export default function DrawerComponent() {
         onClick={toggleDrawer(true)}
         aria-label="Open menu"
         style={{
-          color: '#ffffff',
-          backgroundColor: 'rgba(255, 255, 255, 0.08)',
+          color: 'var(--text-primary)',
+          backgroundColor: 'var(--bg-card)',
+          border: '1px solid var(--border-subtle)',
           borderRadius: 10,
           padding: 8
         }}
@@ -34,11 +35,11 @@ export default function DrawerComponent() {
         onClose={toggleDrawer(false)}
         PaperProps={{
           style: {
-            backgroundColor: '#090d16',
-            color: '#ffffff',
+            backgroundColor: 'var(--bg-secondary)',
+            color: 'var(--text-primary)',
             width: 280,
-            borderLeft: '1px solid rgba(255, 255, 255, 0.1)',
-            backgroundImage: 'radial-gradient(circle at 100% 0%, rgba(10, 132, 255, 0.15) 0%, transparent 60%)'
+            borderLeft: '1px solid var(--border-subtle)',
+            boxShadow: 'var(--glass-shadow)'
           }
         }}
       >

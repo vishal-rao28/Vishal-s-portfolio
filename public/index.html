@@ -4,6 +4,28 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/assets/vishal_optimized.jpg" />
     <meta name="theme-color" content="#090d16" />
+    <script>
+      (function() {
+        try {
+          var urlParams = new URLSearchParams(window.location.search);
+          var theme = urlParams.get('theme') || localStorage.getItem('apple_portfolio_theme') || 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+          var scrollTarget = urlParams.get('scroll');
+          if (scrollTarget) {
+            window.addEventListener('DOMContentLoaded', function() {
+              setTimeout(function() {
+                if (scrollTarget === 'bottom') {
+                  window.scrollTo(0, document.body.scrollHeight);
+                } else {
+                  var el = document.getElementById(scrollTarget) || document.querySelector(scrollTarget);
+                  if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' });
+                }
+              }, 400);
+            });
+          }
+        } catch(e) {}
+      })();
+    </script>
     <title>Vishal Rao M — iOS Developer & Technical Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,15 +72,5 @@
   </head>
   <body>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

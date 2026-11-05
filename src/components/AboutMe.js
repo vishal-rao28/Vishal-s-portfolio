@@ -33,8 +33,8 @@ function AboutMe() {
 
   const highlights = [
     {
-      title: '2-Month Fast Promotion',
-      subtitle: 'Intern to Full-Time iOS Developer at Viana Soft',
+      title: 'High-Velocity Fast Development',
+      subtitle: 'Rapid iOS engineering & production shipping at Viana Soft',
       badge: 'Recognition',
       badgeColor: '#0A84FF'
     },
@@ -76,8 +76,7 @@ function AboutMe() {
         className="glass-card"
         style={{
           padding: '36px',
-          marginBottom: '40px',
-          border: '1px solid rgba(255, 255, 255, 0.08)'
+          marginBottom: '40px'
         }}
       >
         <div
@@ -90,7 +89,7 @@ function AboutMe() {
           className="about-story-grid"
         >
           <div>
-            <h3 style={{ fontSize: '1.45rem', marginBottom: '16px', color: '#ffffff' }}>
+            <h3 style={{ fontSize: '1.45rem', marginBottom: '16px', color: 'var(--text-primary)' }}>
               Full-Lifecycle Mobile Ownership
             </h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px' }}>
@@ -113,9 +112,10 @@ function AboutMe() {
                 key={idx}
                 style={{
                   padding: '20px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.025)',
-                  border: '1px solid rgba(255, 255, 255, 0.06)',
+                  backgroundColor: 'var(--bg-card)',
+                  border: '1px solid var(--border-subtle)',
                   borderRadius: '14px',
+                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.04)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between'
@@ -133,7 +133,7 @@ function AboutMe() {
                 >
                   {item.badge}
                 </span>
-                <h4 style={{ fontSize: '1.05rem', margin: '0 0 6px 0', color: '#ffffff', lineHeight: 1.3 }}>
+                <h4 style={{ fontSize: '1.05rem', margin: '0 0 6px 0', color: 'var(--text-primary)', lineHeight: 1.3 }}>
                   {item.title}
                 </h4>
                 <p style={{ margin: 0, fontSize: '0.82rem', color: 'var(--text-muted)' }}>
@@ -156,21 +156,35 @@ function AboutMe() {
         {pillars.map((pillar, index) => (
           <div
             key={index}
-            className="glass-card"
+            className="glass-card about-pillar-card"
             style={{
               padding: '30px',
-              background: pillar.gradient,
-              borderColor: pillar.borderColor,
               display: 'flex',
-              flexDirection: 'column'
+              flexDirection: 'column',
+              borderTop: `3px solid ${pillar.color}`
+            }}
+            onMouseEnter={(e) => {
+              const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+              e.currentTarget.style.borderColor = pillar.color;
+              e.currentTarget.style.transform = 'translateY(-5px)';
+              e.currentTarget.style.boxShadow = isLight
+                ? `0 0 0 1px ${pillar.color}80, inset 0 2px 2px 0 #ffffff, 0 24px 55px -10px ${pillar.color}35, 0 6px 18px rgba(15, 23, 42, 0.08)`
+                : `0 0 0 1px ${pillar.color}60, inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.4), 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 35px ${pillar.color}30`;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = '';
+              e.currentTarget.style.transform = '';
+              e.currentTarget.style.boxShadow = '';
             }}
           >
             <div
+              className="about-pillar-icon"
+              data-pillar-idx={index}
               style={{
                 width: '48px',
                 height: '48px',
                 borderRadius: '12px',
-                backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                backgroundColor: 'var(--bg-card)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -181,7 +195,7 @@ function AboutMe() {
             >
               {pillar.icon}
             </div>
-            <h3 style={{ fontSize: '1.3rem', marginBottom: '12px', color: '#ffffff' }}>
+            <h3 style={{ fontSize: '1.3rem', marginBottom: '12px', color: 'var(--text-primary)' }}>
               {pillar.title}
             </h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.94rem', lineHeight: '1.65', margin: 0 }}>

@@ -54,7 +54,8 @@ function SkillSet() {
         { name: 'Model Quantization', level: 'Intermediate', highlight: 'Optimizing for Apple Neural Engine' },
         { name: 'Deep Neural Networks', level: 'Intermediate', highlight: 'CNNs & Classifier Architectures' },
         { name: 'Python', level: 'Advanced', highlight: 'Model Training & Evaluation' },
-        { name: 'Data Science', level: 'Graduate', highlight: 'Saveetha B.Tech Specialization' }
+        { name: 'Data Science', level: 'Graduate', highlight: 'Saveetha B.Tech Specialization' },
+        { name: 'Core ML Tools', level: 'Advanced', highlight: 'Model Conversion & Profiling' }
       ]
     },
     {
@@ -110,9 +111,10 @@ function SkillSet() {
               style={{
                 padding: '8px 18px',
                 borderRadius: '30px',
-                border: `1px solid ${isActive ? '#0A84FF' : 'rgba(255, 255, 255, 0.1)'}`,
-                backgroundColor: isActive ? 'rgba(10, 132, 255, 0.18)' : 'rgba(255, 255, 255, 0.03)',
-                color: isActive ? '#64D2FF' : 'var(--text-secondary)',
+                border: `1px solid ${isActive ? 'var(--apple-blue)' : 'var(--border-subtle)'}`,
+                backgroundColor: isActive ? 'var(--apple-blue)' : 'var(--bg-card)',
+                color: isActive ? '#ffffff' : 'var(--text-primary)',
+                boxShadow: isActive ? '0 4px 14px var(--apple-blue-glow)' : '0 2px 6px rgba(0, 0, 0, 0.04)',
                 fontWeight: 600,
                 fontSize: '0.86rem',
                 cursor: 'pointer',
@@ -126,14 +128,8 @@ function SkillSet() {
         })}
       </div>
 
-      {/* Skills Groups Grid */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-          gap: '24px'
-        }}
-      >
+      {/* Skills Groups Grid: Clean Symmetrical Matrix */}
+      <div className={`skills-groups-grid ${filteredGroups.length === 1 ? 'single-card' : ''}`}>
         {filteredGroups.map((group, gIdx) => (
           <div
             key={gIdx}
@@ -153,15 +149,17 @@ function SkillSet() {
                 gap: '12px',
                 marginBottom: '20px',
                 paddingBottom: '12px',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.06)'
+                borderBottom: '1px solid var(--border-subtle)'
               }}
             >
               <span
+                className="skills-card-icon-pod"
+                data-group-id={group.category}
                 style={{
                   width: '36px',
                   height: '36px',
                   borderRadius: '10px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                  backgroundColor: 'var(--bg-card)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -171,58 +169,70 @@ function SkillSet() {
               >
                 {group.icon}
               </span>
-              <h3 style={{ fontSize: '1.25rem', margin: 0, color: '#ffffff' }}>
+              <h3 style={{ fontSize: '1.25rem', margin: 0, color: 'var(--text-primary)' }}>
                 {group.title}
               </h3>
             </div>
 
-            {/* Skills Pills List */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+            {/* Skills Tiles Grid: Exact 2-Column Horizontal & Vertical Alignment */}
+            <div className="skills-tiles-grid">
               {group.skills.map((skill, sIdx) => (
                 <div
                   key={sIdx}
-                  style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.03)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                    borderRadius: '10px',
-                    padding: '8px 12px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '2px',
-                    flex: '1 1 calc(50% - 10px)',
-                    minWidth: '130px',
-                    transition: 'all 0.2s ease'
-                  }}
+                  className="skill-tile-item"
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.07)';
+                    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
                     e.currentTarget.style.borderColor = group.accentColor;
-                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = isLight
+                      ? `0 0 0 1px ${group.accentColor}50, inset 0 2px 2px #ffffff, 0 8px 24px ${group.accentColor}25`
+                      : `0 0 0 1px ${group.accentColor}50, inset 0 1.5px 2px rgba(255, 255, 255, 0.4), 0 8px 24px ${group.accentColor}30`;
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.03)';
-                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
-                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.borderColor = '';
+                    e.currentTarget.style.boxShadow = '';
                   }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#ffffff' }}>
+                  {/* Left Column: Skill Name & Subtitle */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', minWidth: 0, flex: 1 }}>
+                    <span
+                      style={{
+                        fontSize: '0.88rem',
+                        fontWeight: 600,
+                        color: 'var(--text-primary)',
+                        lineHeight: 1.2,
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis'
+                      }}
+                      title={skill.name}
+                    >
                       {skill.name}
                     </span>
                     <span
                       style={{
-                        fontSize: '0.68rem',
-                        padding: '1px 6px',
-                        borderRadius: '4px',
-                        backgroundColor: 'rgba(255, 255, 255, 0.06)',
-                        color: group.accentColor,
-                        fontWeight: 600
+                        fontSize: '0.74rem',
+                        color: 'var(--text-muted)',
+                        lineHeight: 1.3,
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis'
                       }}
+                      title={skill.highlight}
                     >
-                      {skill.level}
+                      {skill.highlight}
                     </span>
                   </div>
-                  <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>
-                    {skill.highlight}
+
+                  {/* Right Side Small Bar: Aligned Equally Horizontally & Vertically */}
+                  <span
+                    className="skill-level-badge"
+                    style={{
+                      backgroundColor: `${group.accentColor}18`,
+                      color: group.accentColor,
+                      border: `1px solid ${group.accentColor}40`
+                    }}
+                  >
+                    {skill.level}
                   </span>
                 </div>
               ))}

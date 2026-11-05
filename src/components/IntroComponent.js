@@ -1,15 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import vishalPhoto from '../assets/img/vishal_optimized1.jpg';
 
 function IntroComponent() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText('vishalrao5432@gmail.com');
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
   const scrollTo = (id) => (e) => {
     e.preventDefault();
     const el = document.getElementById(id);
@@ -53,7 +45,7 @@ function IntroComponent() {
               fontWeight: 800,
               letterSpacing: '-0.03em',
               marginBottom: '20px',
-              color: '#ffffff'
+              color: 'var(--text-primary)'
             }}
           >
             Crafting High-Performance{' '}
@@ -71,7 +63,7 @@ function IntroComponent() {
               maxWidth: '580px'
             }}
           >
-            I'm <strong style={{ color: '#ffffff' }}>Vishal Rao M</strong> — an iOS Developer &amp; Technical Engineer specializing in native <strong style={{ color: '#64D2FF' }}>SwiftUI, UIKit, Core ML</strong> on-device AI, and <strong style={{ color: '#30D158' }}>full-discipline automated QA testing</strong>. Fast-tracked from intern to full-time developer in 2 months with 5+ production apps shipped live to the App Store.
+            I'm <strong style={{ color: 'var(--text-primary)' }}>Vishal Rao M</strong> — an iOS Developer &amp; Technical Engineer specializing in native <strong style={{ color: 'var(--apple-cyan, #0284c7)' }}>SwiftUI, UIKit, Core ML</strong> on-device AI, and <strong style={{ color: 'var(--apple-green, #248a3d)' }}>automated testing across 4 quality verification gates</strong>. Pioneering high-velocity rapid development with 5+ production apps shipped live to the App Store.
           </p>
 
           {/* CTAs */}
@@ -100,63 +92,37 @@ function IntroComponent() {
               rel="noopener noreferrer"
             >
               <button className="btn-secondary">
-                <span>Resume ↗</span>
+                <span>See Resume ↗</span>
               </button>
             </a>
-
-            <button
-              onClick={handleCopyEmail}
-              className="btn-secondary"
-              title="Copy email address"
-              style={{
-                borderColor: copied ? '#30D158' : 'var(--border-subtle)',
-                color: copied ? '#30D158' : 'var(--text-primary)'
-              }}
-            >
-              {copied ? (
-                <>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <span>Copied Email!</span>
-                </>
-              ) : (
-                <>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                  </svg>
-                  <span>Copy Email</span>
-                </>
-              )}
-            </button>
           </div>
 
           {/* Key Metrics Strip */}
           <div
+            className="hero-metrics-strip"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))',
               gap: '16px',
               paddingTop: '24px',
-              borderTop: '1px solid rgba(255, 255, 255, 0.08)'
+              borderTop: '1px solid var(--border-subtle)'
             }}
           >
-            <div>
-              <div style={{ fontSize: '1.9rem', fontWeight: 800, color: '#0A84FF', lineHeight: 1 }}>5+</div>
-              <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: 4 }}>App Store Apps</div>
+            <div className="hero-metric-item">
+              <div style={{ fontSize: '1.9rem', fontWeight: 800, color: 'var(--apple-blue)', lineHeight: 1 }}>5+</div>
+              <div className="hero-metric-label" style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: 4, fontWeight: 500 }}>App Store Apps</div>
             </div>
-            <div>
-              <div style={{ fontSize: '1.9rem', fontWeight: 800, color: '#30D158', lineHeight: 1 }}>2 Mo</div>
-              <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: 4 }}>Fast Promotion</div>
+            <div className="hero-metric-item">
+              <div style={{ fontSize: '1.9rem', fontWeight: 800, color: 'var(--apple-green)', lineHeight: 1 }}>Rapid</div>
+              <div className="hero-metric-label" style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: 4, fontWeight: 500 }}>Fast Development</div>
             </div>
-            <div>
-              <div style={{ fontSize: '1.9rem', fontWeight: 800, color: '#FF9F0A', lineHeight: 1 }}>4</div>
-              <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: 4 }}>QA Disciplines</div>
+            <div className="hero-metric-item">
+              <div style={{ fontSize: '1.9rem', fontWeight: 800, color: 'var(--apple-amber)', lineHeight: 1 }}>4</div>
+              <div className="hero-metric-label" style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: 4, fontWeight: 500 }}>Quality Gates</div>
             </div>
-            <div>
-              <div style={{ fontSize: '1.9rem', fontWeight: 800, color: '#BF5AF2', lineHeight: 1 }}>B.Tech</div>
-              <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: 4 }}>AI &amp; Data Science</div>
+            <div className="hero-metric-item">
+              <div style={{ fontSize: '1.9rem', fontWeight: 800, color: 'var(--apple-purple)', lineHeight: 1 }}>B.Tech</div>
+              <div className="hero-metric-label" style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: 4, fontWeight: 500 }}>AI &amp; Data Science</div>
             </div>
           </div>
         </div>
@@ -179,13 +145,11 @@ function IntroComponent() {
           />
 
           <div
-            className="glass-card"
+            className="glass-card hero-showcase-glass"
             style={{
               position: 'relative',
               zIndex: 1,
-              padding: '28px',
-              boxShadow: '0 25px 60px rgba(0, 0, 0, 0.5)',
-              border: '1px solid rgba(255, 255, 255, 0.12)'
+              padding: '28px'
             }}
           >
             {/* Window header */}
@@ -196,7 +160,7 @@ function IntroComponent() {
                 justifyContent: 'space-between',
                 paddingBottom: '16px',
                 marginBottom: '20px',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.08)'
+                borderBottom: '1px solid var(--border-subtle)'
               }}
             >
               <div style={{ display: 'flex', gap: '8px' }}>
@@ -213,7 +177,7 @@ function IntroComponent() {
                   padding: '2px 8px',
                   borderRadius: '12px',
                   backgroundColor: 'rgba(10, 132, 255, 0.15)',
-                  color: '#64D2FF',
+                  color: 'var(--apple-blue)',
                   fontWeight: 600
                 }}
               >
@@ -252,7 +216,7 @@ function IntroComponent() {
                     height: 18,
                     borderRadius: '50%',
                     backgroundColor: '#30D158',
-                    border: '3px solid #090d16',
+                    border: '3px solid var(--bg-primary)',
                     boxShadow: '0 0 10px rgba(48, 209, 88, 0.6)'
                   }}
                 />
@@ -260,15 +224,15 @@ function IntroComponent() {
 
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <h3 style={{ fontSize: '1.4rem', margin: 0, color: '#ffffff' }}>Vishal Rao M</h3>
+                  <h3 style={{ fontSize: '1.4rem', margin: 0, color: 'var(--text-primary)' }}>Vishal Rao M</h3>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A84FF">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                   </svg>
                 </div>
-                <p style={{ margin: '3px 0 0 0', fontSize: '0.88rem', color: '#94a3b8' }}>
+                <p style={{ margin: '3px 0 0 0', fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
                   iOS Dev &amp; Technical Trainer @ SIMATS
                 </p>
-                <p style={{ margin: '2px 0 0 0', fontSize: '0.8rem', color: '#64748b' }}>
+                <p style={{ margin: '2px 0 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                   Chennai, India · Saveetha / DSEC B.Tech AI &amp; DS
                 </p>
               </div>
@@ -284,58 +248,73 @@ function IntroComponent() {
               }}
             >
               <div
+                className="hero-feature-row"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   padding: '10px 14px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.03)',
-                  border: '1px solid rgba(255, 255, 255, 0.06)',
-                  borderRadius: '10px'
+                  backgroundColor: 'var(--bg-card)',
+                  border: '1px solid var(--border-subtle)',
+                  borderRadius: '10px',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
                 }}
               >
-                <span style={{ fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
-                   Native Frameworks
-                </span>
-                <span style={{ fontSize: '0.84rem', fontWeight: 600, color: '#64D2FF' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <span className="glossy-icon-badge apple-blue"></span>
+                  <span style={{ fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
+                    Native Frameworks
+                  </span>
+                </div>
+                <span style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--apple-cyan, #0284c7)' }}>
                   SwiftUI · UIKit · Combine
                 </span>
               </div>
 
               <div
+                className="hero-feature-row"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   padding: '10px 14px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.03)',
-                  border: '1px solid rgba(255, 255, 255, 0.06)',
-                  borderRadius: '10px'
+                  backgroundColor: 'var(--bg-card)',
+                  border: '1px solid var(--border-subtle)',
+                  borderRadius: '10px',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
                 }}
               >
-                <span style={{ fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
-                  🧠 On-Device Intelligence
-                </span>
-                <span style={{ fontSize: '0.84rem', fontWeight: 600, color: '#BF5AF2' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <span className="glossy-icon-badge apple-purple">🧠</span>
+                  <span style={{ fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
+                    On-Device Intelligence
+                  </span>
+                </div>
+                <span style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--apple-purple, #9333ea)' }}>
                   Core ML · Apple Neural Engine
                 </span>
               </div>
 
               <div
+                className="hero-feature-row"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   padding: '10px 14px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.03)',
-                  border: '1px solid rgba(255, 255, 255, 0.06)',
-                  borderRadius: '10px'
+                  backgroundColor: 'var(--bg-card)',
+                  border: '1px solid var(--border-subtle)',
+                  borderRadius: '10px',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
                 }}
               >
-                <span style={{ fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
-                  🛡️ Verification Suite
-                </span>
-                <span style={{ fontSize: '0.84rem', fontWeight: 600, color: '#30D158' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <span className="glossy-icon-badge apple-green">🛡️</span>
+                  <span style={{ fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
+                    Verification Suite
+                  </span>
+                </div>
+                <span style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--apple-green, #248a3d)' }}>
                   Selenium · Appium · Load QA
                 </span>
               </div>
@@ -343,46 +322,48 @@ function IntroComponent() {
 
             {/* Live App Store badge ticker */}
             <div
+              className="hero-release-ticker"
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
                 padding: '10px 14px',
                 backgroundColor: 'rgba(10, 132, 255, 0.08)',
-                border: '1px solid rgba(10, 132, 255, 0.2)',
+                border: '1px solid rgba(10, 132, 255, 0.22)',
                 borderRadius: '10px'
               }}
             >
-              <span style={{ fontSize: '1rem' }}>🚀</span>
-              <span style={{ fontSize: '0.8rem', color: '#e2e8f0', lineHeight: 1.4 }}>
-                <strong style={{ color: '#64D2FF' }}>Latest Releases:</strong> Viana 360, Smart Ulcer Predictor, BreathTrack &amp; CoreCare
+              <span className="glossy-icon-badge apple-amber" style={{ fontSize: '0.9rem' }}>🚀</span>
+              <span style={{ fontSize: '0.8rem', color: 'var(--text-primary)', lineHeight: 1.4 }}>
+                <strong style={{ color: 'var(--apple-blue)' }}>Latest Releases:</strong> Smart Ulcer Predictor, BreathTrack, CoreCare &amp; HairJourneyTracker
               </span>
             </div>
 
             {/* Live Xcode Telemetry Bar */}
             <div
+              className="hero-telemetry-bar"
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(3, 1fr)',
                 gap: '8px',
                 marginTop: '16px',
                 paddingTop: '14px',
-                borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+                borderTop: '1px solid var(--border-subtle)',
                 fontSize: '0.72rem',
                 fontFamily: 'monospace'
               }}
             >
-              <div style={{ background: 'rgba(255,255,255,0.02)', padding: '6px 8px', borderRadius: 8, textAlign: 'center' }}>
-                <div style={{ color: '#94a3b8', fontSize: '0.62rem' }}>PROMOTION</div>
-                <div style={{ color: '#38bdf8', fontWeight: 700 }}>120 Hz</div>
+              <div className="hero-telemetry-item" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)', padding: '6px 8px', borderRadius: 8, textAlign: 'center' }}>
+                <div className="telemetry-label" style={{ color: 'var(--text-muted)', fontSize: '0.62rem' }}>PROMOTION</div>
+                <div style={{ color: 'var(--apple-cyan, #0284c7)', fontWeight: 700 }}>120 Hz</div>
               </div>
-              <div style={{ background: 'rgba(255,255,255,0.02)', padding: '6px 8px', borderRadius: 8, textAlign: 'center' }}>
-                <div style={{ color: '#94a3b8', fontSize: '0.62rem' }}>REST SYNC</div>
-                <div style={{ color: '#4ade80', fontWeight: 700 }}>11ms Latency</div>
+              <div className="hero-telemetry-item" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)', padding: '6px 8px', borderRadius: 8, textAlign: 'center' }}>
+                <div className="telemetry-label" style={{ color: 'var(--text-muted)', fontSize: '0.62rem' }}>REST SYNC</div>
+                <div style={{ color: 'var(--apple-green, #248a3d)', fontWeight: 700 }}>11ms Latency</div>
               </div>
-              <div style={{ background: 'rgba(255,255,255,0.02)', padding: '6px 8px', borderRadius: 8, textAlign: 'center' }}>
-                <div style={{ color: '#94a3b8', fontSize: '0.62rem' }}>ANE INFER</div>
-                <div style={{ color: '#c084fc', fontWeight: 700 }}>8.2ms Neural</div>
+              <div className="hero-telemetry-item" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)', padding: '6px 8px', borderRadius: 8, textAlign: 'center' }}>
+                <div className="telemetry-label" style={{ color: 'var(--text-muted)', fontSize: '0.62rem' }}>ANE INFER</div>
+                <div style={{ color: 'var(--apple-purple, #9333ea)', fontWeight: 700 }}>8.2ms Neural</div>
               </div>
             </div>
           </div>
@@ -407,7 +388,7 @@ function IntroComponent() {
             }}
           >
             <span style={{ fontSize: '0.85rem' }}></span>
-            <span style={{ fontSize: '0.75rem', color: '#64D2FF', fontWeight: 700 }}>SwiftUI 6 · 120 FPS</span>
+            <span style={{ fontSize: '0.75rem', color: 'var(--apple-cyan, #0284c7)', fontWeight: 700 }}>SwiftUI 6 · 120 FPS</span>
           </div>
 
           <div
@@ -429,7 +410,7 @@ function IntroComponent() {
             }}
           >
             <span style={{ fontSize: '0.85rem' }}>🧠</span>
-            <span style={{ fontSize: '0.75rem', color: '#e0a5ff', fontWeight: 700 }}>Core ML · 8.2ms ANE</span>
+            <span style={{ fontSize: '0.75rem', color: 'var(--apple-purple, #9333ea)', fontWeight: 700 }}>Core ML · 8.2ms ANE</span>
           </div>
         </div>
       </div>

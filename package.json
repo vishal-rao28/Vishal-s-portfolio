@@ -1,8 +1,7 @@
 {
-  "name": "vishal-portfolio",
+  "name": "vishal-rao-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
   "dependencies": {
     "@emotion/react": "^11.7.0",
     "@emotion/styled": "^11.6.0",
