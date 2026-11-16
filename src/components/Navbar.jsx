@@ -91,9 +91,11 @@ export default function Navbar({ isHeroPage }) {
     };
   }, [isHeroPage]);
 
+  const resumeUrl = `${import.meta.env.BASE_URL}Vishal_Rao_Resume.pdf`;
+
   const onResumeClick = (e) => {
     e.preventDefault();
-    const href = '/Vishal_Rao_Resume.pdf';
+    const href = resumeUrl;
     try {
       const a = document.createElement('a');
       a.href = href;
@@ -151,7 +153,7 @@ export default function Navbar({ isHeroPage }) {
         }}
       >
         <a
-          href="/Vishal_Rao_Resume.pdf"
+          href={resumeUrl}
           onClick={(e) => { onResumeClick(e); playClickSound(); }}
           onMouseEnter={playHoverSound}
           className="nav-link hoverable font-mono uppercase text-glow"
@@ -228,7 +230,7 @@ export default function Navbar({ isHeroPage }) {
             {/* Desktop Resume link */}
             {!isHeroPage && (
               <a
-                href="/Vishal_Rao_Resume.pdf"
+                href={resumeUrl}
                 onClick={(e) => { onResumeClick(e); playClickSound(); }}
                 onMouseEnter={playHoverSound}
                 className="nav-link hoverable font-mono uppercase text-glow desktop-resume-link"
@@ -303,7 +305,7 @@ export default function Navbar({ isHeroPage }) {
 
         <div className="mobile-drawer-footer font-mono">
           <a
-            href="/Vishal_Rao_Resume.pdf"
+            href={resumeUrl}
             onClick={(e) => {
               onResumeClick(e);
               playClickSound();

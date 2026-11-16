@@ -175,7 +175,11 @@ function devEmailApiPlugin() {
 }
 
 // https://vite.dev/config/
+const isGitHubPages = process.env.GITHUB_PAGES === 'true' || process.env.GITHUB_ACTIONS === 'true';
+const base = process.env.BASE_PATH || (isGitHubPages ? '/Vishal-s-portfolio/' : '/');
+
 export default defineConfig({
+  base,
   plugins: [react(), cloudflare(), devEmailApiPlugin()],
   build: {
     cssMinify: 'esbuild',
