@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://vishal-rao28.github.io/Vishal-s-portfolio/sitemap.xml
