@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://vishal-rao28.github.io/Vishal-s-portfolio/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://github.com/vishal-rao28.png</image:loc>
+      <image:title>Vishal Rao M - Native iOS and On-Device Core ML Architect</image:title>
+      <image:caption>Official portrait of Vishal Rao M</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vishal-rao28.github.io/Vishal-s-portfolio/og-image.jpg</image:loc>
+      <image:title>Vishal Rao M Portfolio Showcase</image:title>
+    </image:image>
+  </url>
+</urlset>
